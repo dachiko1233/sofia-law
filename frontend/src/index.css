@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* offset anchor targets so smooth-scrolled sections clear the viewport top */
+    scroll-padding-top: 24px;
+    /* Keep every language within the same viewport width — longer Greek/Russian
+       strings can never introduce a horizontal scrollbar. Set on <html> (not
+       <body>) so the sticky policy table-of-contents keeps working. */
+    overflow-x: hidden;
+  }
+
+  body {
+    margin: 0;
+    background: theme('colors.bg');
+    color: theme('colors.ink');
+    font-family: theme('fontFamily.sans');
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    /* Break long words / tokens (emails, URLs, long GR/RU words) so text wraps
+       instead of widening its container across languages. */
+    overflow-wrap: break-word;
+  }
+
+  a {
+    color: theme('colors.ink');
+  }
+  a:hover {
+    color: theme('colors.accent');
+  }
+
+  /* Visible focus states for keyboard users (WCAG AA) */
+  :focus-visible {
+    outline: 2px solid theme('colors.accent-bright');
+    outline-offset: 2px;
+  }
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid theme('colors.accent-bright');
+    outline-offset: 1px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    * {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Centered content column — mirrors .wrap from the designs */
+  .wrap {
+    width: 100%;
+    max-width: theme('maxWidth.wrap');
+    margin: 0 auto;
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+  @media (max-width: 960px) {
+    .wrap {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  /* Hero: photo background with the dark left-to-right gradient */
+  .hero-wrap {
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(12, 12, 14, 0.88) 0%,
+        rgba(12, 12, 14, 0.7) 40%,
+        rgba(12, 12, 14, 0.15) 75%,
+        rgba(12, 12, 14, 0) 100%
+      ),
+      url('/images/hero-justice.jpg');
+    background-size: cover;
+    background-position: center right;
+  }
+
+  /* Practice-area / policy header: slightly stronger gradient */
+  .pa-head {
+    background-color: theme('colors.navy');
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(12, 12, 14, 0.9) 0%,
+        rgba(12, 12, 14, 0.72) 45%,
+        rgba(12, 12, 14, 0.25) 100%
+      ),
+      url('/images/hero-justice.jpg');
+    background-size: cover;
+    background-position: center right;
+  }
+
+  @media (max-width: 960px) {
+    .hero-wrap {
+      background-image:
+        linear-gradient(180deg, rgba(12, 12, 14, 0.8), rgba(12, 12, 14, 0.72)),
+        url('/images/hero-justice.jpg');
+    }
+    .pa-head {
+      background-image:
+        linear-gradient(180deg, rgba(12, 12, 14, 0.84), rgba(12, 12, 14, 0.76)),
+        url('/images/hero-justice.jpg');
+    }
+  }
+
+  /* Expertise rows — hover shifts right and recolours */
+  .exp-row {
+    transition:
+      padding 0.25s ease,
+      color 0.2s ease;
+  }
+  .exp-row:hover {
+    padding-left: 12px;
+    color: theme('colors.accent');
+  }
+  .exp-row .arr {
+    transition: transform 0.25s ease;
+  }
+  .exp-row:hover .arr {
+    transform: translateX(6px);
+  }
+
+  .tech-card {
+    transition: transform 0.25s ease;
+  }
+  .tech-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .more-card {
+    transition: background 0.2s ease;
+  }
+  .more-card:hover {
+    background: theme('colors.table-head');
+  }
+
+  /* Policy document layout (privacy / cookies / legal notice) */
+  .policy-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 8fr);
+    gap: 80px;
+    align-items: start;
+  }
+  .policy-toc {
+    position: sticky;
+    top: 24px;
+  }
+  @media (max-width: 960px) {
+    .policy-grid {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 32px;
+    }
+    .policy-toc {
+      position: static;
+    }
+  }
+
+  .policy-doc {
+    line-height: 1.7;
+  }
+  .policy-doc a {
+    color: theme('colors.accent');
+  }
+  .policy-doc a:hover {
+    color: theme('colors.ink');
+  }
+  .policy-doc h2 {
+    margin: 56px 0 16px;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: theme('colors.ink');
+  }
+  .policy-doc h2:first-child {
+    margin-top: 0;
+  }
+  .policy-doc p,
+  .policy-doc li,
+  .policy-doc dd {
+    color: theme('colors.ink-soft');
+  }
+  .policy-doc p {
+    margin: 0 0 16px;
+  }
+  .policy-doc ul {
+    margin: 0 0 16px;
+    padding-left: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* Cookie table */
+  .policy-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    min-width: 560px;
+  }
+  .policy-table th {
+    text-align: left;
+    font-weight: 700;
+    padding: 14px 16px;
+    background: theme('colors.table-head');
+    color: theme('colors.ink');
+  }
+  .policy-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid theme('colors.line');
+    color: theme('colors.ink-soft');
+    vertical-align: top;
+  }
+}
+
+/* Visually-hidden helper for screen-reader-only labels */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Build outputs
+frontend/dist/
+backend/bin/
+backend/polykarpou-law
+backend/server
+
+# Environment
+.env
+*.env
+!.env.example
+
+# SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+backend/data/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Go
+backend/vendor/

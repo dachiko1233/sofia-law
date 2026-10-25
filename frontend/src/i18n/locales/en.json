@@ -1,0 +1,161 @@
+{
+  "brand": { "name1": "POLYKARPOU", "name2": "LAW", "tagline": "Legal clarity for a complex world." },
+  "topbar": { "hours": "Mon–Fri · 9:00–18:00" },
+  "nav": {
+    "home": "Home",
+    "expertise": "Expertise",
+    "careers": "Careers",
+    "about": "About",
+    "contact": "Contact",
+    "menu": "Main menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language"
+  },
+  "buttons": {
+    "getInTouch": "Get in touch",
+    "exploreExpertise": "Explore expertise",
+    "aboutMe": "About me",
+    "discussCase": "Discuss your case",
+    "arrangeConsultation": "Arrange a consultation",
+    "bookConsultation": "Book a consultation",
+    "bookCall": "Book a call",
+    "learnMore": "Learn more",
+    "sendCv": "Send your CV",
+    "sendEnquiry": "Send enquiry",
+    "subscribe": "Subscribe"
+  },
+  "hero": {
+    "eyebrow": "Attorney at Law · Limassol, Cyprus",
+    "title": "Legal clarity for a complex world.",
+    "subtitle": "Strategic, modern legal counsel for individuals and businesses — combining deep courtroom experience with a technology-first approach."
+  },
+  "about": {
+    "label": "About",
+    "title": "About Polykarpou Law",
+    "portraitAlt": "Sofia Polykarpou, Advocate and founder of Polykarpou Law",
+    "name": "Sofia Polykarpou",
+    "role": "Advocate · Founder",
+    "p1": "Polykarpou Law is an independent law practice in Limassol, founded by advocate Sofia Polykarpou, a member of the Cyprus Bar Association. Sofia earned her Bachelor of Laws (LLB) at Nottingham Trent University and went on to complete a Master’s in International Business Law at the University of Liverpool, giving her a strong foundation in corporate and cross-border commercial matters.",
+    "p2": "The practice focuses on corporate and commercial law, advising on company formation and registration, corporate governance and compliance, shareholder agreements, commercial contracts, and the legal side of business transactions and restructuring. Clients include local entrepreneurs, international companies establishing a presence in Cyprus, and foreign investors, reflecting Limassol’s role as a centre for international business.",
+    "p3": "At Polykarpou Law, every client works directly with Sofia. You can expect clear advice in plain language, honest guidance on your options and costs, and prompt replies to your questions. Services are available in Greek, English and Russian.",
+    "p4": "Whether you are starting a new company or need ongoing legal support for an established business, you are welcome to get in touch to arrange an initial consultation."
+  },
+  "expertise": {
+    "label": "Expertise",
+    "title": "Focused practice areas, handled end to end."
+  },
+  "technology": {
+    "label": "Technology",
+    "title": "Where law meets technology.",
+    "intro": "Modern tools that make legal work faster, more transparent and easier to follow — wherever you are.",
+    "card1Title": "Online consultations",
+    "card1Body": "Meet by secure video call from anywhere in the world, with electronic signatures and scheduling in a few clicks.",
+    "card2Title": "Secure client portal",
+    "card2Body": "Share documents safely, follow every stage of your case and see deadlines in one place. [Optional — remove if not offered]"
+  },
+  "careers": {
+    "label": "Careers",
+    "title": "Build your legal career with us.",
+    "intro": "We are always glad to hear from ambitious lawyers, trainees and legal assistants who share our commitment to clear, client-focused work.",
+    "noOpen": "There are no open positions at the moment.",
+    "noOpenNote": "You are welcome to send your CV — we will keep it on file and contact you when a suitable role opens."
+  },
+  "contact": {
+    "label": "Get in touch",
+    "title": "How can I help?",
+    "intro": "Send a short description of your matter and I will reply within one business day. Your first 30-minute consultation is free.",
+    "officeLabel": "OFFICE",
+    "officeAddress": "Limassol, Cyprus",
+    "phone": "+357 97 776 761",
+    "email": "[name@domain.com.cy]",
+    "form": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "phone": "Phone",
+      "areaLegend": "Area of law",
+      "message": "Your message",
+      "consent": "I consent to my personal data being processed to respond to this enquiry, as described in the <0>Privacy Policy</0>.",
+      "sending": "Sending…",
+      "success": "Thank you — enquiry received.",
+      "error": "Something went wrong. Please try again, or email us directly.",
+      "errors": {
+        "firstName": "Please enter your first name.",
+        "lastName": "Please enter your last name.",
+        "email": "Please enter a valid email address.",
+        "area": "Please choose an area of law.",
+        "message": "Please enter a short message.",
+        "consent": "Please tick the consent box so we may reply."
+      }
+    },
+    "areas": {
+      "corporate": "Corporate",
+      "litigation": "Litigation",
+      "criminal": "Criminal",
+      "realEstate": "Real Estate",
+      "family": "Family",
+      "other": "Other"
+    }
+  },
+  "newsletter": {
+    "heading": "Newsletter",
+    "blurb": "Legal updates from Cyprus, a few times a year.",
+    "placeholder": "Email address",
+    "success": "Thank you — you’re subscribed.",
+    "error": "Could not subscribe. Please try again."
+  },
+  "footer": {
+    "quickLinks": "Quick links",
+    "keyAreas": "Key areas",
+    "office": "Office",
+    "street": "[Street, number]",
+    "cityCountry": "Limassol, Cyprus",
+    "rights": "© 2026 [Full Name]. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "legal": "Legal Notice",
+    "cookieSettings": "Cookie settings",
+    "linkedin": "LinkedIn",
+    "disclaimerShort": "© 2026 Polykarpou Law · Limassol, Cyprus",
+    "paDisclaimer": "The information on this page is general and does not constitute legal advice.",
+    "areas": {
+      "corporate": "Corporate",
+      "employment": "Employment",
+      "realEstate": "Real Estate",
+      "techIp": "Tech, IP & Data Protection"
+    }
+  },
+  "paTemplate": {
+    "breadcrumbHome": "Home",
+    "breadcrumbExpertise": "Expertise",
+    "eyebrow": "Expertise",
+    "overview": "Overview",
+    "services": "Services",
+    "approach": "Approach",
+    "faq": "FAQ",
+    "otherAreas": "Other practice areas"
+  },
+  "policy": {
+    "onThisPage": "On this page",
+    "breadcrumbHome": "Home",
+    "lastUpdated": "Last updated: [DD Month 2026]"
+  },
+  "cookie": {
+    "title": "We value your privacy",
+    "body": "We use strictly necessary cookies to make this site work. With your consent we also use preference and analytics cookies. See our <0>Cookie Policy</0>.",
+    "accept": "Accept",
+    "reject": "Reject non-essential",
+    "settings": "Cookie settings"
+  },
+  "meta": {
+    "homeTitle": "Polykarpou Law — Limassol, Cyprus",
+    "homeDescription": "Independent law practice in Limassol, Cyprus. Strategic, modern legal counsel for individuals and businesses — corporate, litigation, criminal, real estate, family, employment, tech & IP, and immigration.",
+    "privacyTitle": "Privacy Policy — Polykarpou Law",
+    "privacyDescription": "How Polykarpou Law collects and uses personal data, in line with the GDPR and Cyprus data protection law.",
+    "cookiesTitle": "Cookie Policy — Polykarpou Law",
+    "cookiesDescription": "How Polykarpou Law uses cookies and similar technologies, and how you can control them.",
+    "legalTitle": "Legal Notice — Polykarpou Law",
+    "legalDescription": "Website operator details, liability, intellectual property and governing law for Polykarpou Law."
+  }
+}
