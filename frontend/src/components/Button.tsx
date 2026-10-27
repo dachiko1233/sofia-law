@@ -49,7 +49,10 @@ export default function Button(props: Props) {
   const { children, variant = 'navy', size = 'sm', arrow = false, className = '' } = props;
 
   const classes = [
-    'inline-flex items-center justify-center rounded-pill font-semibold font-sans no-underline',
+    // `leading-none` keeps the button height driven by padding + min-height
+    // only, never by the inherited body line-height — so it is identical in
+    // every language and immune to webfont swap (FOUT) shifts.
+    'inline-flex items-center justify-center rounded-pill font-semibold font-sans no-underline leading-none',
     'whitespace-nowrap transition-colors',
     VARIANT[variant],
     SIZE[size],

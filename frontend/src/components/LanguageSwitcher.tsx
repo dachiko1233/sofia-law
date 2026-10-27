@@ -17,7 +17,7 @@ export default function LanguageSwitcher({ tone = 'dark' }: Props) {
       {SUPPORTED_LANGUAGES.map((lng) => {
         const active = current === lng;
         const base =
-          'rounded-pill px-3 py-1.5 text-xs font-bold tracking-[0.06em] min-h-[32px] min-w-[44px] cursor-pointer font-sans transition-colors';
+          'rounded-pill px-3 py-1.5 text-[14px] font-bold tracking-[0.06em] min-h-[32px] min-w-[44px] cursor-pointer font-sans transition-colors';
         const activeCls = 'bg-white text-ink';
         const idleCls =
           tone === 'dark'

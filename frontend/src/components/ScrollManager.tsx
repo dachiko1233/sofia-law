@@ -5,6 +5,10 @@ import { useLocation } from 'react-router-dom';
 //  - a URL with a #hash smoothly scrolls that element into view (also when the
 //    hash is reached from another route);
 //  - a URL without a hash scrolls back to the top on route change.
+//
+// Switching language is deliberately NOT handled here: it is not a route
+// change, so the scroll position is left exactly where it was (the page must
+// not jump when the language changes).
 export default function ScrollManager() {
   const { pathname, hash } = useLocation();
 

@@ -23,8 +23,13 @@ const AREAS = [
   { key: 'other', value: 'Other' },
 ] as const;
 
+// `border-0` zeroes every side's width (so there's no box outline), then
+// `border-b-[1.5px]` restores just the bottom edge as a 1.5px solid underline.
+// The colour comes from the per-field `underline()` helper. NB: do not use
+// `border-none` here — it sets `border-style: none`, which cancels the
+// underline regardless of width.
 const inputBase =
-  'border-none border-b-[1.5px] bg-transparent py-3 text-[17px] min-h-[48px] text-ink font-sans focus:outline-none';
+  'border-0 border-b-[1.5px] bg-transparent py-3 text-[17px] min-h-[48px] text-ink font-sans focus:outline-none';
 
 export default function ContactForm() {
   const { t } = useTranslation();
@@ -222,7 +227,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="inline-flex min-h-[56px] cursor-pointer items-center gap-3 self-start rounded-pill border-none bg-ink px-[34px] py-[18px] text-base font-semibold text-white font-sans disabled:opacity-60"
+        className="inline-flex min-h-[56px] cursor-pointer items-center gap-3 self-start rounded-pill border-none bg-ink px-[34px] py-[18px] text-base font-semibold leading-none text-white font-sans disabled:opacity-60"
       >
         {status === 'loading' ? t('contact.form.sending') : t('buttons.sendEnquiry')}
         {status !== 'loading' && <ArrowRight size={18} />}

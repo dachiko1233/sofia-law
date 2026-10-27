@@ -7,6 +7,7 @@ import type { Language } from '../i18n';
 
 export default function LegalNoticePage() {
   const { t, i18n } = useTranslation();
+  const enT = i18n.getFixedT('en');
   const policy = getPolicy('legal', i18n.language as Language);
 
   return (
@@ -18,6 +19,7 @@ export default function LegalNoticePage() {
       />
       <PolicyLayout
         title={t('footer.legal')}
+        titleReference={enT('footer.legal')}
         breadcrumbLabel={t('footer.legal')}
         toc={policyToc(policy)}
         activePolicy="legal"

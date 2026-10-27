@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { AnchorLink } from './AnchorLink';
 import Header from './Header';
 import Footer from './Footer';
+import FitText from './FitText';
 
 export interface TocItem {
   id: string;
@@ -11,6 +12,8 @@ export interface TocItem {
 
 interface Props {
   title: string;
+  /** English title — the reference height this page title must match. */
+  titleReference: string;
   breadcrumbLabel: string;
   toc: TocItem[];
   activePolicy: 'privacy' | 'cookies' | 'legal';
@@ -21,6 +24,7 @@ interface Props {
 // title, then a sticky "On this page" table of contents beside the article.
 export default function PolicyLayout({
   title,
+  titleReference,
   breadcrumbLabel,
   toc,
   activePolicy,
@@ -45,9 +49,13 @@ export default function PolicyLayout({
               {breadcrumbLabel}
             </span>
           </nav>
-          <h1 className="m-0 text-[44px] font-medium leading-[1.04] tracking-[-0.045em] text-white min-[960px]:text-[68px]">
+          <FitText
+            as="h1"
+            reference={titleReference}
+            className="m-0 text-[44px] font-medium leading-[1.04] tracking-[-0.045em] text-white min-[960px]:text-[68px]"
+          >
             {title}
-          </h1>
+          </FitText>
           <span className="text-[15px] text-slate-breadcrumb">{t('policy.lastUpdated')}</span>
         </section>
       </div>

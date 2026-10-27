@@ -1,9 +1,75 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+   Design tokens (Tailwind v4 CSS-first config). These replace the old
+   tailwind.config.js `theme.extend`. Each --color-* / --font-* / --container-*
+   / --radius-* / --tracking-* entry generates the matching utilities
+   (e.g. --color-ink → bg-ink / text-ink, --container-wrap → max-w-wrap).
+--------------------------------------------------------------------------- */
+@theme {
+  /* Core brand tokens */
+  --color-bg: #f6f6f3;
+  --color-ink: #0a1a2f;
+  --color-navy: #243140;
+  --color-accent: #1f4fd1;
+  --color-footer: #06111f;
+  --color-muted: #4a5a70;
+  --color-line: #dadde2;
+
+  /* Supporting shades */
+  --color-ink-soft: #33455e; /* justified body copy */
+  --color-ink-70: #24364f;
+  --color-slate-label: #8fa6c4; /* labels / footer text on dark */
+  --color-slate-light: #c7d0dd; /* hero subtext */
+  --color-slate-breadcrumb: #aebbcb;
+  --color-slate-doc: #d5deea; /* practice-area head text */
+  --color-num-grey: #6b7a8f; /* list numbers */
+  --color-accent-bright: #3d7bff; /* newsletter button + focus ring */
+  --color-navy-card: #2f3d4d; /* technology cards */
+  --color-navy-line: #1c2e47; /* footer divider */
+  --color-navy-border: #22385a; /* newsletter / social border */
+  --color-footer-dim: #7f93ae; /* footer bottom row */
+  --color-input-line: #9aa6b5; /* contact input underline */
+  --color-table-head: #e9ebee;
+  --color-placeholder: #e3e6ea; /* image placeholder blocks */
+
+  /* Manrope covers Latin, Greek and Cyrillic at every weight, so EN/GR/RU
+     render in the same typeface. The fallbacks (Helvetica/Arial/Noto) also
+     cover all three scripts, so text stays consistent across languages even
+     before the webfont loads or if it is unavailable — never a per-script
+     system default. */
+  --font-sans: 'Manrope', 'Helvetica Neue', 'Arial', 'Noto Sans', sans-serif;
+
+  --container-wrap: 1320px;
+  --container-prose: 780px;
+
+  --radius-pill: 999px;
+
+  --tracking-label: 0.14em;
+  --tracking-logo: 0.06em;
+}
+
+/* Preserve the Tailwind v3 default border colour. In v4 an unqualified
+   `border` uses currentColor; this restores gray-200 so any border utility
+   without an explicit colour keeps its original appearance. */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 @layer base {
   html {
+    /* Pin the root font-size so every rem (Tailwind spacing, etc.) is identical
+       regardless of the browser's *default* font size. Without this, browsers
+       that set a per-script default size (e.g. Firefox's per-language font
+       settings — Latin vs Greek vs Cyrillic) would make the whole layout scale
+       differently per language. Browser zoom (Ctrl +/-) still scales px. */
+    font-size: 16px;
     scroll-behavior: smooth;
     /* offset anchor targets so smooth-scrolled sections clear the viewport top */
     scroll-padding-top: 24px;
@@ -15,9 +81,9 @@
 
   body {
     margin: 0;
-    background: theme('colors.bg');
-    color: theme('colors.ink');
-    font-family: theme('fontFamily.sans');
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
     font-size: 17px;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
@@ -27,20 +93,20 @@
   }
 
   a {
-    color: theme('colors.ink');
+    color: var(--color-ink);
   }
   a:hover {
-    color: theme('colors.accent');
+    color: var(--color-accent);
   }
 
   /* Visible focus states for keyboard users (WCAG AA) */
   :focus-visible {
-    outline: 2px solid theme('colors.accent-bright');
+    outline: 2px solid var(--color-accent-bright);
     outline-offset: 2px;
   }
   input:focus-visible,
   textarea:focus-visible {
-    outline: 2px solid theme('colors.accent-bright');
+    outline: 2px solid var(--color-accent-bright);
     outline-offset: 1px;
   }
 
@@ -56,10 +122,10 @@
 }
 
 @layer components {
-  /* Centered content column — mirrors .wrap from the designs */
+  /* Centered content column */
   .wrap {
     width: 100%;
-    max-width: theme('maxWidth.wrap');
+    max-width: var(--container-wrap);
     margin: 0 auto;
     padding-left: 56px;
     padding-right: 56px;
@@ -88,7 +154,7 @@
 
   /* Practice-area / policy header: slightly stronger gradient */
   .pa-head {
-    background-color: theme('colors.navy');
+    background-color: var(--color-navy);
     background-image:
       linear-gradient(
         90deg,
@@ -122,7 +188,7 @@
   }
   .exp-row:hover {
     padding-left: 12px;
-    color: theme('colors.accent');
+    color: var(--color-accent);
   }
   .exp-row .arr {
     transition: transform 0.25s ease;
@@ -142,7 +208,7 @@
     transition: background 0.2s ease;
   }
   .more-card:hover {
-    background: theme('colors.table-head');
+    background: var(--color-table-head);
   }
 
   /* Policy document layout (privacy / cookies / legal notice) */
@@ -170,17 +236,17 @@
     line-height: 1.7;
   }
   .policy-doc a {
-    color: theme('colors.accent');
+    color: var(--color-accent);
   }
   .policy-doc a:hover {
-    color: theme('colors.ink');
+    color: var(--color-ink);
   }
   .policy-doc h2 {
     margin: 56px 0 16px;
     font-size: 28px;
     font-weight: 600;
     letter-spacing: -0.02em;
-    color: theme('colors.ink');
+    color: var(--color-ink);
   }
   .policy-doc h2:first-child {
     margin-top: 0;
@@ -188,7 +254,7 @@
   .policy-doc p,
   .policy-doc li,
   .policy-doc dd {
-    color: theme('colors.ink-soft');
+    color: var(--color-ink-soft);
   }
   .policy-doc p {
     margin: 0 0 16px;
@@ -212,13 +278,13 @@
     text-align: left;
     font-weight: 700;
     padding: 14px 16px;
-    background: theme('colors.table-head');
-    color: theme('colors.ink');
+    background: var(--color-table-head);
+    color: var(--color-ink);
   }
   .policy-table td {
     padding: 14px 16px;
-    border-bottom: 1px solid theme('colors.line');
-    color: theme('colors.ink-soft');
+    border-bottom: 1px solid var(--color-line);
+    color: var(--color-ink-soft);
     vertical-align: top;
   }
 }

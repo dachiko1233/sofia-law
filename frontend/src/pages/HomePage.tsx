@@ -7,14 +7,21 @@ import SectionLabel from '../components/SectionLabel';
 import Button from '../components/Button';
 import PracticeAreaRow from '../components/PracticeAreaRow';
 import ContactForm from '../components/ContactForm';
+import FitText from '../components/FitText';
 import { AnchorLink } from '../components/AnchorLink';
 import { ArrowRight, MonitorIcon, LockIcon } from '../components/icons';
 import { getPracticeAreas } from '../data/practiceAreas';
 import type { Language } from '../i18n';
 
+// Shared Tailwind classes for the big section headings.
+const H2 = 'm-0 text-[36px] font-medium leading-[1.05] tracking-[-0.04em] min-[960px]:text-[56px]';
+
 export default function HomePage() {
   const { t, i18n } = useTranslation();
+  const enT = i18n.getFixedT('en');
   const practiceAreas = getPracticeAreas(i18n.language as Language);
+  // English titles, keyed by slug — the reference each card title must match.
+  const enTitles = Object.fromEntries(getPracticeAreas('en').map((a) => [a.slug, a.title]));
 
   return (
     <div className="bg-bg text-ink">
@@ -46,9 +53,9 @@ export default function HomePage() {
           </div>
           <div className="flex max-w-[700px] flex-col gap-[22px]">
             <SectionLabel className="leading-none text-accent">{t('about.label')}</SectionLabel>
-            <h2 className="m-0 text-[36px] font-medium leading-[1.05] tracking-[-0.04em] min-[960px]:text-[56px]">
+            <FitText as="h2" reference={enT('about.title')} className={H2}>
               {t('about.title')}
-            </h2>
+            </FitText>
             {(['p1', 'p2', 'p3', 'p4'] as const).map((p) => (
               <p
                 key={p}
@@ -74,9 +81,9 @@ export default function HomePage() {
           <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
             <div className="flex max-w-[720px] flex-col gap-5">
               <SectionLabel>{t('expertise.label')}</SectionLabel>
-              <h2 className="m-0 text-[36px] font-medium leading-[1.05] tracking-[-0.04em] min-[960px]:text-[56px]">
+              <FitText as="h2" reference={enT('expertise.title')} className={H2}>
                 {t('expertise.title')}
-              </h2>
+              </FitText>
             </div>
             <AnchorLink
               to="/#contact"
@@ -92,6 +99,7 @@ export default function HomePage() {
                 key={area.slug}
                 num={area.num}
                 title={area.title}
+                titleReference={enTitles[area.slug]}
                 blurb={area.homeBlurb}
                 slug={area.slug}
               />
@@ -105,21 +113,23 @@ export default function HomePage() {
         <div className="wrap">
           <div className="mb-16 flex max-w-[760px] flex-col gap-5">
             <SectionLabel className="text-slate-label">{t('technology.label')}</SectionLabel>
-            <h2 className="m-0 text-[36px] font-medium leading-[1.05] tracking-[-0.04em] text-white min-[960px]:text-[56px]">
+            <FitText as="h2" reference={enT('technology.title')} className={`${H2} text-white`}>
               {t('technology.title')}
-            </h2>
+            </FitText>
             <p className="m-0 text-[19px]">{t('technology.intro')}</p>
           </div>
           <div className="grid grid-cols-1 gap-6 min-[960px]:grid-cols-2">
             <TechCard
               icon={<MonitorIcon />}
               title={t('technology.card1Title')}
+              titleReference={enT('technology.card1Title')}
               body={t('technology.card1Body')}
               cta={t('buttons.bookCall')}
             />
             <TechCard
               icon={<LockIcon />}
               title={t('technology.card2Title')}
+              titleReference={enT('technology.card2Title')}
               body={t('technology.card2Body')}
               cta={t('buttons.learnMore')}
             />
@@ -132,9 +142,9 @@ export default function HomePage() {
         <div className="wrap grid grid-cols-1 gap-10 min-[960px]:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] min-[960px]:gap-24">
           <div className="flex flex-col gap-5">
             <SectionLabel>{t('careers.label')}</SectionLabel>
-            <h2 className="m-0 text-[36px] font-medium leading-[1.05] tracking-[-0.04em] min-[960px]:text-[56px]">
+            <FitText as="h2" reference={enT('careers.title')} className={H2}>
               {t('careers.title')}
-            </h2>
+            </FitText>
           </div>
           <div className="flex flex-col gap-6 pt-2">
             <p className="m-0 text-[19px] text-ink-70">{t('careers.intro')}</p>
@@ -160,9 +170,13 @@ export default function HomePage() {
         <div className="wrap grid grid-cols-1 gap-10 min-[960px]:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] min-[960px]:gap-24">
           <div className="flex flex-col gap-6">
             <SectionLabel>{t('contact.label')}</SectionLabel>
-            <h2 className="m-0 text-[36px] font-medium leading-[1.0] tracking-[-0.045em] min-[960px]:text-[64px]">
+            <FitText
+              as="h2"
+              reference={enT('contact.title')}
+              className="m-0 text-[36px] font-medium leading-[1.0] tracking-[-0.045em] min-[960px]:text-[64px]"
+            >
               {t('contact.title')}
-            </h2>
+            </FitText>
             <p className="m-0 text-[19px] text-muted">{t('contact.intro')}</p>
             <div className="mt-3 flex flex-col gap-1.5 border-t border-line pt-7">
               <span className="text-[13px] font-semibold tracking-[0.04em] text-num-grey">
@@ -192,11 +206,13 @@ export default function HomePage() {
 function TechCard({
   icon,
   title,
+  titleReference,
   body,
   cta,
 }: {
   icon: React.ReactNode;
   title: string;
+  titleReference: string;
   body: string;
   cta: string;
 }) {
@@ -205,7 +221,12 @@ function TechCard({
       <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white text-navy">
         {icon}
       </span>
-      <span className="text-[30px] font-medium tracking-[-0.03em] text-white">{title}</span>
+      <FitText
+        reference={titleReference}
+        className="text-[30px] font-medium tracking-[-0.03em] text-white"
+      >
+        {title}
+      </FitText>
       <span className="grow">{body}</span>
       <AnchorLink
         to="/#contact"

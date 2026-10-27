@@ -35,7 +35,7 @@ export default function Header({ variant }: Props) {
     <div className="relative">
       {/* Top bar — only on the home hero (matches the design) */}
       {variant === 'home' && (
-        <div className="wrap flex items-center justify-between gap-4 border-b border-[#5A4433] py-2.5 text-[13px]">
+        <div className="wrap flex h-[53px] items-center justify-between gap-4 border-b border-[#5A4433] text-[14px]">
           <div className="hidden gap-7 min-[960px]:flex">
             <a
               href={`tel:${t('contact.phone').replace(/\s/g, '')}`}
@@ -70,7 +70,7 @@ export default function Header({ variant }: Props) {
             <AnchorLink
               key={item.to}
               to={item.to}
-              className="text-[15px] font-medium text-white no-underline hover:text-accent"
+              className="text-[16px] font-medium text-white no-underline hover:text-accent"
             >
               {item.label}
             </AnchorLink>

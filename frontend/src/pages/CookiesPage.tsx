@@ -7,6 +7,7 @@ import type { Language } from '../i18n';
 
 export default function CookiesPage() {
   const { t, i18n } = useTranslation();
+  const enT = i18n.getFixedT('en');
   const policy = getPolicy('cookies', i18n.language as Language);
 
   return (
@@ -18,6 +19,7 @@ export default function CookiesPage() {
       />
       <PolicyLayout
         title={t('footer.cookies')}
+        titleReference={enT('footer.cookies')}
         breadcrumbLabel={t('footer.cookies')}
         toc={policyToc(policy)}
         activePolicy="cookies"
