@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { AnchorLink } from './AnchorLink';
 import Logo from './Logo';
 import NewsletterForm from './NewsletterForm';
-import { LinkedInIcon } from './icons';
+import { LinkedInIcon, InstagramIcon } from './icons';
 import { openCookieSettings } from '../lib/cookieConsent';
 
 type Variant = 'full' | 'practice' | 'legal';
@@ -10,7 +10,7 @@ type Variant = 'full' | 'practice' | 'legal';
 interface Props {
   variant?: Variant;
   /** For the "legal" slim footer: which policy link to highlight. */
-  activePolicy?: 'privacy' | 'cookies' | 'legal';
+  activePolicy?: 'privacy' | 'cookies' | 'legal' | 'terms';
 }
 
 function CookieSettingsButton({ className }: { className: string }) {
@@ -28,6 +28,7 @@ function PolicyLinks({ active }: { active?: Props['activePolicy'] }) {
     { key: 'privacy', to: '/privacy', label: t('footer.privacy') },
     { key: 'cookies', to: '/cookies', label: t('footer.cookies') },
     { key: 'legal', to: '/legal-notice', label: t('footer.legal') },
+    { key: 'terms', to: '/terms', label: t('footer.terms') },
   ] as const;
   return (
     <span className="flex flex-wrap gap-6">
@@ -92,6 +93,13 @@ export default function Footer({ variant = 'full', activePolicy }: Props) {
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-navy-border text-slate-label"
               >
                 <LinkedInIcon size={18} />
+              </a>
+              <a
+                href="#"
+                aria-label={t('footer.instagram')}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-navy-border text-slate-label"
+              >
+                <InstagramIcon size={18} />
               </a>
             </div>
           </div>

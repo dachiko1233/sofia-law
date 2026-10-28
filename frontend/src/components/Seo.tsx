@@ -4,15 +4,18 @@ interface Props {
   title: string;
   description: string;
   path?: string;
+  /** Keep the page out of search indexes (e.g. the client/admin portal). */
+  noindex?: boolean;
 }
 
 // Per-page <title>, meta description and Open Graph tags.
-export default function Seo({ title, description, path = '/' }: Props) {
+export default function Seo({ title, description, path = '/', noindex = false }: Props) {
   const url = `https://polykarpoulaw.com${path}`;
   return (
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       <link rel="canonical" href={url} />
 
       <meta property="og:type" content="website" />

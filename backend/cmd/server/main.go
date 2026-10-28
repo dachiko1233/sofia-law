@@ -37,7 +37,9 @@ func main() {
 
 	mail := mailer.New(cfg, log)
 	h := handlers.New(mail, db, log)
-	router := server.New(cfg, h, log)
+	portal := handlers.NewPortal(db, cfg.SessionSecret, log)
+	admin := handlers.NewAdmin(db, cfg.AdminEmail, cfg.AdminPassword, cfg.SessionSecret, log)
+	router := server.New(cfg, h, portal, admin, log)
 
 	srv := &http.Server{
 		Addr:              ":" + cfg.Port,

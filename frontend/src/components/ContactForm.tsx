@@ -1,7 +1,7 @@
 import { useRef, useState, type FormEvent } from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { AnchorLink } from './AnchorLink';
-import { ArrowRight } from './icons';
+import { ArrowRight, Check } from './icons';
 import { submitContact } from '../lib/api';
 import {
   validateContact,
@@ -89,11 +89,31 @@ export default function ContactForm() {
     return (
       <div
         role="status"
-        className="flex min-h-[200px] flex-col justify-center gap-3 rounded-md border border-line bg-white p-10"
+        className="flex min-h-[340px] flex-col items-center justify-center gap-6 rounded-md border border-line bg-white px-8 py-16 text-center"
       >
-        <span className="text-[26px] font-medium tracking-[-0.02em] text-ink">
-          {t('contact.form.success')}
+        <span className="flex h-[72px] w-[72px] items-center justify-center rounded-full bg-accent/10 text-accent ring-8 ring-accent/5">
+          <Check size={34} strokeWidth={2.2} />
         </span>
+        <div className="flex flex-col gap-2.5">
+          <h3 className="m-0 text-[28px] font-medium tracking-[-0.02em] text-ink">
+            {t('contact.form.success')}
+          </h3>
+          <p className="m-0 max-w-[420px] text-[16px] leading-relaxed text-muted">
+            {t('contact.form.successNote')}
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={() => {
+            setErrors({});
+            setValues((v) => ({ ...v, firstName: '', lastName: '', email: '', phone: '', message: '', consent: false }));
+            setStatus('idle');
+          }}
+          className="mt-1 inline-flex min-h-[44px] items-center gap-2 border-b-[1.5px] border-ink pb-0.5 text-[15px] font-semibold text-ink transition-colors hover:border-accent hover:text-accent"
+        >
+          {t('contact.form.sendAnother')}
+          <ArrowRight size={15} />
+        </button>
       </div>
     );
   }

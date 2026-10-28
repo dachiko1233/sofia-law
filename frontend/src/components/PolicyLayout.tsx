@@ -16,7 +16,7 @@ interface Props {
   titleReference: string;
   breadcrumbLabel: string;
   toc: TocItem[];
-  activePolicy: 'privacy' | 'cookies' | 'legal';
+  activePolicy: 'privacy' | 'cookies' | 'legal' | 'terms';
   children: ReactNode;
 }
 

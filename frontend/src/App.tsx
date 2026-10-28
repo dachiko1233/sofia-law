@@ -6,6 +6,9 @@ import ExpertisePage from './pages/ExpertisePage';
 import PrivacyPage from './pages/PrivacyPage';
 import CookiesPage from './pages/CookiesPage';
 import LegalNoticePage from './pages/LegalNoticePage';
+import TermsPage from './pages/TermsPage';
+import PortalPage from './pages/PortalPage';
+import AdminPage from './pages/AdminPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 export default function App() {
@@ -18,6 +21,9 @@ export default function App() {
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/cookies" element={<CookiesPage />} />
         <Route path="/legal-notice" element={<LegalNoticePage />} />
+        <Route path="/terms" element={<TermsPage />} />
+        <Route path="/portal" element={<PortalPage />} />
+        <Route path="/admin" element={<AdminPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <CookieBanner />

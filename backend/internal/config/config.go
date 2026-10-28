@@ -20,6 +20,15 @@ type Config struct {
 	AllowedOrigin string
 	DBPath        string
 
+	// SessionSecret signs client-portal session tokens. Set a long random
+	// value in production (SESSION_SECRET); the dev fallback is not secure.
+	SessionSecret string
+
+	// AdminEmail / AdminPassword are the single office/admin login for the
+	// portal review view. When either is empty the admin area is disabled.
+	AdminEmail    string
+	AdminPassword string
+
 	// ServeFrontend controls whether Gin also serves frontend/dist (production).
 	ServeFrontend bool
 	FrontendDir   string
@@ -42,6 +51,9 @@ func Load() Config {
 		DomainVerified: os.Getenv("DOMAIN_VERIFIED") == "true",
 		AllowedOrigin:  getenv("ALLOWED_ORIGIN", "http://localhost:5173"),
 		DBPath:         getenv("DB_PATH", "./data/polykarpou.db"),
+		SessionSecret:  getenv("SESSION_SECRET", "dev-insecure-secret-change-me"),
+		AdminEmail:     os.Getenv("ADMIN_EMAIL"),
+		AdminPassword:  os.Getenv("ADMIN_PASSWORD"),
 		ServeFrontend:  os.Getenv("SERVE_FRONTEND") == "true",
 		FrontendDir:    getenv("FRONTEND_DIR", "../frontend/dist"),
 	}

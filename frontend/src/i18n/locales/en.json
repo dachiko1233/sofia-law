@@ -1,6 +1,12 @@
 {
-  "brand": { "name1": "POLYKARPOU", "name2": "& CO. LLC", "tagline": "Legal clarity for a complex world." },
-  "topbar": { "hours": "Mon–Fri · 9:00–18:00" },
+  "brand": {
+    "name1": "POLYKARPOU",
+    "name2": "& CO. LLC",
+    "tagline": "Legal clarity for a complex world."
+  },
+  "topbar": {
+    "hours": "Mon–Fri · 9:00–18:00"
+  },
   "nav": {
     "home": "Home",
     "expertise": "Expertise",
@@ -21,6 +27,7 @@
     "bookConsultation": "Book a consultation",
     "bookCall": "Book a call",
     "learnMore": "Learn more",
+    "openPortal": "Open the portal",
     "sendCv": "Send your CV",
     "sendEnquiry": "Send enquiry",
     "subscribe": "Subscribe"
@@ -79,6 +86,8 @@
       "consent": "I consent to my personal data being processed to respond to this enquiry, as described in the <0>Privacy Policy</0>.",
       "sending": "Sending…",
       "success": "Thank you — enquiry received.",
+      "successNote": "I’ll reply personally within one business day. For anything urgent, you’re welcome to call.",
+      "sendAnother": "Send another enquiry",
       "error": "Something went wrong. Please try again, or email us directly.",
       "errors": {
         "firstName": "Please enter your first name.",
@@ -115,8 +124,10 @@
     "privacy": "Privacy Policy",
     "cookies": "Cookie Policy",
     "legal": "Legal Notice",
+    "terms": "Terms of Engagement",
     "cookieSettings": "Cookie settings",
     "linkedin": "LinkedIn",
+    "instagram": "Instagram",
     "disclaimerShort": "© 2026 Polykarpou & Co. LLC · Limassol, Cyprus",
     "paDisclaimer": "The information on this page is general and does not constitute legal advice.",
     "areas": {
@@ -139,7 +150,7 @@
   "policy": {
     "onThisPage": "On this page",
     "breadcrumbHome": "Home",
-    "lastUpdated": "Last updated: [DD Month 2026]"
+    "lastUpdated": "Last updated: 28 October 2026"
   },
   "cookie": {
     "title": "We value your privacy",
@@ -156,6 +167,71 @@
     "cookiesTitle": "Cookie Policy — Polykarpou & Co. LLC",
     "cookiesDescription": "How Polykarpou & Co. LLC uses cookies and similar technologies, and how you can control them.",
     "legalTitle": "Legal Notice — Polykarpou & Co. LLC",
-    "legalDescription": "Website operator details, liability, intellectual property and governing law for Polykarpou & Co. LLC."
+    "legalDescription": "Website operator details, liability, intellectual property and governing law for Polykarpou & Co. LLC.",
+    "termsTitle": "Terms of Engagement — Polykarpou & Co. LLC",
+    "termsDescription": "The terms on which Polykarpou & Co. LLC acts for clients — services, fees, client identification, confidentiality, liability and governing law."
+  },
+  "portal": {
+    "eyebrow": "Secure client portal",
+    "title": "Client Portal",
+    "subtitle": "Sign in to share documents securely and see everything you have uploaded in one place.",
+    "tabLogin": "Sign in",
+    "tabRegister": "Create account",
+    "email": "Email",
+    "password": "Password",
+    "passwordHint": "At least 8 characters.",
+    "signIn": "Sign in",
+    "createAccount": "Create account",
+    "working": "Please wait…",
+    "signedIn": "You are signed in.",
+    "logout": "Sign out",
+    "uploadTitle": "Upload a document",
+    "uploadHint": "PDFs, images or documents up to 10 MB.",
+    "uploadButton": "Choose a file",
+    "uploading": "Uploading…",
+    "documentsTitle": "Your documents",
+    "loading": "Loading…",
+    "empty": "You haven’t uploaded any documents yet.",
+    "download": "Download",
+    "metaTitle": "Client Portal — Polykarpou & Co. LLC",
+    "metaDescription": "Secure client portal — sign in to share documents with Polykarpou & Co. LLC and view your uploads.",
+    "errors": {
+      "invalid_credentials": "Email or password is incorrect.",
+      "email_taken": "An account with this email already exists. Try signing in instead.",
+      "weak_password": "Password must be at least 8 characters.",
+      "invalid_email": "Please enter a valid email address.",
+      "file_too_large": "That file is larger than 10 MB.",
+      "no_file": "Please choose a file to upload.",
+      "network": "Connection problem. Please try again.",
+      "rate_limited": "Too many attempts. Please wait a few minutes and try again.",
+      "not_found": "The portal service is unavailable right now. Please try again later.",
+      "server_error": "The server had a problem. Please try again in a moment.",
+      "generic": "Something went wrong. Please try again.",
+      "missing_name": "Please enter your first and last name.",
+      "invalid_phone": "Please enter a valid phone number."
+    },
+    "name": "First name",
+    "surname": "Last name",
+    "phone": "Phone",
+    "delete": "Delete",
+    "confirmDelete": "Delete “{{name}}”? This cannot be undone.",
+    "statusSeen": "Seen by office",
+    "statusPending": "Awaiting review",
+    "officeNotes": "Office notes"
+  },
+  "admin": {
+    "metaTitle": "Office Admin — Polykarpou & Co. LLC",
+    "eyebrow": "Office administration",
+    "title": "Client Requests",
+    "subtitle": "Review client uploads, mark documents as seen and leave notes.",
+    "signInTitle": "Office sign in",
+    "summary": "{{clients}} clients · {{documents}} documents",
+    "noClients": "No client accounts yet.",
+    "noDocuments": "No documents uploaded yet.",
+    "joined": "Joined {{date}}",
+    "markSeen": "Mark as seen",
+    "markUnseen": "Seen",
+    "addComment": "Add note",
+    "commentPlaceholder": "Leave a note for this document…"
   }
 }

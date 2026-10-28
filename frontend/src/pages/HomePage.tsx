@@ -78,20 +78,11 @@ export default function HomePage() {
       {/* EXPERTISE */}
       <section id="expertise" className="bg-white py-20 min-[960px]:py-[140px]">
         <div className="wrap">
-          <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
-            <div className="flex max-w-[720px] flex-col gap-5">
-              <SectionLabel>{t('expertise.label')}</SectionLabel>
-              <FitText as="h2" reference={enT('expertise.title')} className={H2}>
-                {t('expertise.title')}
-              </FitText>
-            </div>
-            <AnchorLink
-              to="/#contact"
-              className="inline-flex min-h-[44px] items-center gap-2.5 font-semibold no-underline"
-            >
-              {t('buttons.discussCase')}
-              <ArrowRight size={16} />
-            </AnchorLink>
+          <div className="mb-16 flex max-w-[720px] flex-col gap-5">
+            <SectionLabel>{t('expertise.label')}</SectionLabel>
+            <FitText as="h2" reference={enT('expertise.title')} className={H2}>
+              {t('expertise.title')}
+            </FitText>
           </div>
           <div className="grid grid-cols-1 border-t border-ink min-[960px]:grid-cols-2 min-[960px]:gap-x-16">
             {practiceAreas.map((area) => (
@@ -131,7 +122,8 @@ export default function HomePage() {
               title={t('technology.card2Title')}
               titleReference={enT('technology.card2Title')}
               body={t('technology.card2Body')}
-              cta={t('buttons.learnMore')}
+              cta={t('buttons.openPortal')}
+              to="/portal"
             />
           </div>
         </div>
@@ -209,12 +201,14 @@ function TechCard({
   titleReference,
   body,
   cta,
+  to = '/#contact',
 }: {
   icon: React.ReactNode;
   title: string;
   titleReference: string;
   body: string;
   cta: string;
+  to?: string;
 }) {
   return (
     <div className="tech-card flex min-h-[320px] flex-col gap-5 rounded-md bg-navy-card p-11">
@@ -229,7 +223,7 @@ function TechCard({
       </FitText>
       <span className="grow">{body}</span>
       <AnchorLink
-        to="/#contact"
+        to={to}
         className="inline-flex min-h-[44px] items-center gap-2.5 font-semibold text-white no-underline"
       >
         {cta}

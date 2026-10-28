@@ -9,7 +9,7 @@ import type { Language } from '../i18n';
 import { POLICIES_GR } from './policies.gr';
 import { POLICIES_RU } from './policies.ru';
 
-export type PolicyKey = 'privacy' | 'cookies' | 'legal';
+export type PolicyKey = 'privacy' | 'cookies' | 'legal' | 'terms';
 
 export type PolicyBlock =
   | { type: 'p'; text: string }
@@ -40,7 +40,7 @@ export const POLICIES_EN: PolicyMap = {
         blocks: [
           {
             type: 'p',
-            text: 'The data controller is **Polykarpou & Co. LLC**, [Full Name], Advocate, Limassol, Cyprus. Email: [name@domain.com.cy] · Phone: +357 97 776 761.',
+            text: 'The data controller is **Polykarpou & Co. LLC**, Sofia Polykarpou, Advocate, Limassol, Cyprus. Email: [name@domain.com.cy] · Phone: +357 97 776 761.',
           },
         ],
       },
@@ -133,12 +133,12 @@ export const POLICIES_EN: PolicyMap = {
           {
             type: 'list',
             items: [
-              { text: 'Enquiries that do not lead to an engagement: up to [X months].' },
+              { text: 'Enquiries that do not lead to an engagement: up to 5 years.' },
               {
-                text: 'Client files: for the period required by law and professional rules, generally [X years] after the matter ends.',
+                text: 'Client files: retained permanently, in line with our legal and professional obligations.',
               },
               { text: 'Newsletter: until you unsubscribe.' },
-              { text: 'Job applications: up to [X months], unless you agree to a longer period.' },
+              { text: 'Job applications: up to 12 months, unless you agree to a longer period.' },
             ],
           },
         ],
@@ -187,7 +187,7 @@ export const POLICIES_EN: PolicyMap = {
   },
 
   cookies: {
-    lead: 'This policy explains how polykarpoulaw.com [your domain] uses cookies and similar technologies, and how you can control them.',
+    lead: 'This policy explains how spolykarpou.com uses cookies and similar technologies, and how you can control them.',
     sections: [
       {
         id: 'what',
@@ -213,16 +213,7 @@ export const POLICIES_EN: PolicyMap = {
                 'No',
               ],
               ['Preferences', 'Remember your language choice (EN, GR or RU).', 'Yes'],
-              [
-                'Analytics',
-                'Help us understand how many people visit and which pages are useful. [Remove this row if you do not use analytics.]',
-                'Yes',
-              ],
             ],
-          },
-          {
-            type: 'p',
-            text: '[List the specific cookies and providers your website uses, e.g. hosting or analytics tools, with their names and how long they last.]',
           },
           { type: 'p', text: 'We do not use advertising or tracking cookies to show you ads.' },
         ],
@@ -263,7 +254,7 @@ export const POLICIES_EN: PolicyMap = {
           {
             type: 'deflist',
             rows: [
-              ['Name', 'Polykarpou & Co. LLC — [Full Name], Advocate'],
+              ['Name', 'Polykarpou & Co. LLC — Sofia Polykarpou, Advocate'],
               ['Address', 'Limassol, Cyprus'],
               ['Phone', '+357 97 776 761'],
               ['Email', '[name@domain.com.cy]'],
@@ -321,6 +312,183 @@ export const POLICIES_EN: PolicyMap = {
           {
             type: 'p',
             text: 'This legal notice is governed by the laws of the Republic of Cyprus, and the courts of Cyprus have jurisdiction over any dispute arising from it.',
+          },
+          { type: 'p', text: 'See also our {privacy} and {cookies}.' },
+        ],
+      },
+    ],
+  },
+
+  terms: {
+    lead: 'These Terms of Engagement set out the basis on which Polykarpou & Co. LLC acts for its clients. They apply together with any individual Engagement Letter we send you; if an Engagement Letter and these Terms differ, the Engagement Letter prevails for that matter.',
+    sections: [
+      {
+        id: 'relationship',
+        heading: '1. Our relationship with you',
+        blocks: [
+          {
+            type: 'p',
+            text: 'In these Terms, “we”, “us” and “our” mean Polykarpou & Co. LLC, and “you” means the client named in the Engagement Letter. Together, these Terms and the Engagement Letter form the contract between us.',
+          },
+          {
+            type: 'p',
+            text: 'Our relationship begins only once we have confirmed in writing that we are able to act for you, after completing our client-acceptance checks. Contacting us does not by itself create an advocate–client relationship.',
+          },
+          {
+            type: 'p',
+            text: 'We may update these Terms from time to time. The latest version will always be available on this page and applies to work carried out after it is published.',
+          },
+        ],
+      },
+      {
+        id: 'services',
+        heading: '2. Our advice and services',
+        blocks: [
+          {
+            type: 'p',
+            text: 'We advise only on the law of the Republic of Cyprus. Where your matter involves the law of another country, we can work with suitable foreign lawyers, but we do not accept responsibility for their advice.',
+          },
+          {
+            type: 'p',
+            text: 'The scope of each matter is set out in the Engagement Letter. We will agree any significant change in scope with you before carrying it out.',
+          },
+          {
+            type: 'p',
+            text: 'Sofia Polykarpou has overall responsibility for your matter. We may ask colleagues or trusted external professionals to assist, but you will always know who is handling your work.',
+          },
+        ],
+      },
+      {
+        id: 'aml',
+        heading: '3. Client identification',
+        blocks: [
+          {
+            type: 'p',
+            text: 'Cyprus law requires us to verify the identity of our clients and, where relevant, their beneficial owners and source of funds, before and during our work. We may ask you for identification documents and other information.',
+          },
+          {
+            type: 'p',
+            text: 'We cannot begin or continue acting until these checks are completed to our satisfaction. We may be required by law to report certain matters to the authorities, and in some cases without being able to tell you.',
+          },
+        ],
+      },
+      {
+        id: 'fees',
+        heading: '4. Fees, invoicing and payment',
+        blocks: [
+          {
+            type: 'p',
+            text: 'Our fees are based on the time spent and on the nature, complexity and urgency of the matter. We will give you an estimate or fee basis in the Engagement Letter. Estimates are given in good faith and are not a fixed quotation unless we say so in writing.',
+          },
+          {
+            type: 'p',
+            text: 'Unless stated otherwise, our fees are exclusive of VAT and of disbursements — amounts we pay on your behalf, such as court fees, official charges and expert fees.',
+          },
+          {
+            type: 'p',
+            text: 'We may ask you for funds on account of fees and disbursements before or during a matter, and apply them against our invoices.',
+          },
+          {
+            type: 'list',
+            items: [
+              { text: 'Invoices are payable within the period stated on the invoice.' },
+              { text: 'We may charge interest on amounts that remain unpaid after their due date.' },
+              {
+                text: 'If an invoice remains unpaid, we may stop work and keep your documents until payment is received, to the extent permitted by law.',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        id: 'confidentiality',
+        heading: '5. Confidentiality and third parties',
+        blocks: [
+          {
+            type: 'p',
+            text: 'Everything you tell us is kept in strict confidence and is protected by professional secrecy, except where disclosure is required by law or permitted under these Terms.',
+          },
+          {
+            type: 'p',
+            text: 'To carry out your work we may use trusted service providers, such as IT, hosting and email providers, and may involve experts, translators or agents. We take reasonable care in selecting them and put appropriate confidentiality arrangements in place.',
+          },
+        ],
+      },
+      {
+        id: 'data',
+        heading: '6. Data protection',
+        blocks: [
+          {
+            type: 'p',
+            text: 'We process personal data in line with the EU General Data Protection Regulation (GDPR) and Cyprus data protection law. How we handle your personal data is explained in our {privacy}.',
+          },
+        ],
+      },
+      {
+        id: 'retention',
+        heading: '7. Keeping your documents',
+        blocks: [
+          {
+            type: 'p',
+            text: 'After a matter ends we keep the file for the period required by law and professional rules. We may keep documents in electronic form and destroy paper originals, unless you ask us in writing to return specific originals to you.',
+          },
+        ],
+      },
+      {
+        id: 'ip',
+        heading: '8. Intellectual property',
+        blocks: [
+          {
+            type: 'p',
+            text: 'We keep the copyright and other intellectual property in the documents and materials we create. You may use them for the purpose for which they were prepared, but not for any other purpose or for the benefit of a third party without our written consent.',
+          },
+        ],
+      },
+      {
+        id: 'liability',
+        heading: '9. Our liability',
+        blocks: [
+          {
+            type: 'p',
+            text: 'We carry out your work with reasonable care and skill. To the extent permitted by law, our liability in connection with a matter is limited as set out in the Engagement Letter, and we are not liable for loss that is not a foreseeable result of our work, or for loss caused by information you give us that is incomplete or inaccurate.',
+          },
+          {
+            type: 'p',
+            text: 'Nothing in these Terms limits any liability that cannot be limited under Cyprus law.',
+          },
+        ],
+      },
+      {
+        id: 'termination',
+        heading: '10. Ending the engagement',
+        blocks: [
+          {
+            type: 'p',
+            text: 'You may end our engagement at any time by telling us in writing. We may stop acting for good reason — for example, if a conflict of interest arises, if our checks cannot be completed, or if our invoices are not paid — and will give you reasonable notice where we can.',
+          },
+          {
+            type: 'p',
+            text: 'If the engagement ends, you remain responsible for our fees and disbursements for the work done up to that point.',
+          },
+        ],
+      },
+      {
+        id: 'complaints',
+        heading: '11. Complaints',
+        blocks: [
+          {
+            type: 'p',
+            text: 'We aim to provide a high standard of service. If you have any concern about our work or a bill, please raise it with Sofia Polykarpou as soon as possible so that we can try to put it right. You may also have the right to complain to the Cyprus Bar Association.',
+          },
+        ],
+      },
+      {
+        id: 'law',
+        heading: '12. Governing law and jurisdiction',
+        blocks: [
+          {
+            type: 'p',
+            text: 'These Terms and any Engagement Letter are governed by the laws of the Republic of Cyprus, and the courts of Cyprus have exclusive jurisdiction over any dispute arising from them.',
           },
           { type: 'p', text: 'See also our {privacy} and {cookies}.' },
         ],
