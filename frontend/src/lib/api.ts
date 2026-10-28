@@ -55,10 +55,15 @@ async function postJSON<T>(url: string, body: unknown): Promise<T> {
   return (await res.json()) as T;
 }
 
+// Base URL for the API. In dev this is empty, so calls hit Vite's /api proxy
+// (same origin). In production, where the SPA and API are separate Railway
+// services, set VITE_API_BASE to the backend's URL (no trailing slash).
+const API_BASE = (import.meta.env.VITE_API_BASE ?? '').replace(/\/$/, '');
+
 export function submitContact(payload: ContactPayload): Promise<{ status: string }> {
-  return postJSON('/api/contact', payload);
+  return postJSON(`${API_BASE}/api/contact`, payload);
 }
 
 export function submitNewsletter(payload: NewsletterPayload): Promise<{ status: string }> {
-  return postJSON('/api/newsletter', payload);
+  return postJSON(`${API_BASE}/api/newsletter`, payload);
 }
