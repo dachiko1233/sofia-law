@@ -271,7 +271,7 @@ export const POLICIES_EN: PolicyMap = {
                 'Professional body',
                 'Member of the Cyprus Bar Association · Registration No. [XXXXX]',
               ],
-              ['VAT / Tax ID', '[XXXXXXXXX] [Remove if not applicable]'],
+              ['VAT / Tax ID', '[XXXXXXXXX]'],
             ],
           },
         ],

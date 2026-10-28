@@ -253,7 +253,7 @@ export const POLICIES_RU: PolicyMap = {
               ['Телефон', '+357 97 776 761'],
               ['Email', '[name@domain.com.cy]'],
               ['Профессиональная организация', 'Член Коллегии адвокатов Кипра · Рег. № [XXXXX]'],
-              ['НДС / налоговый номер', '[XXXXXXXXX] [Remove if not applicable]'],
+              ['НДС / налоговый номер', '[XXXXXXXXX]'],
             ],
           },
         ],

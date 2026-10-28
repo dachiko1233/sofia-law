@@ -256,7 +256,7 @@ export const POLICIES_GR: PolicyMap = {
                 'Επαγγελματικός φορέας',
                 'Μέλος του Παγκύπριου Δικηγορικού Συλλόγου · Αρ. Μητρώου [XXXXX]',
               ],
-              ['ΦΠΑ / ΑΦΜ', '[XXXXXXXXX] [Remove if not applicable]'],
+              ['ΦΠΑ / ΑΦΜ', '[XXXXXXXXX]'],
             ],
           },
         ],
