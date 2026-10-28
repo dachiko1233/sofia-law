@@ -31,6 +31,14 @@ export interface RegisterInput {
   password: string;
 }
 
+export interface Profile {
+  uid: number;
+  email: string;
+  name: string;
+  surname: string;
+  phone: string;
+}
+
 export class PortalError extends Error {
   code: string;
   status: number;
@@ -96,6 +104,17 @@ export function login(email: string, password: string): Promise<string> {
 
 function authHeaders(): HeadersInit {
   return { Authorization: `Bearer ${getToken() ?? ''}` };
+}
+
+export async function getProfile(): Promise<Profile> {
+  let res: Response;
+  try {
+    res = await fetch(`${API_BASE}/api/portal/me`, { headers: authHeaders() });
+  } catch {
+    throw new PortalError('network', 0);
+  }
+  if (!res.ok) await parseError(res);
+  return (await res.json()) as Profile;
 }
 
 export async function listDocuments(): Promise<PortalDocument[]> {

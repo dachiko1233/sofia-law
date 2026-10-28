@@ -217,7 +217,93 @@
     "confirmDelete": "Delete “{{name}}”? This cannot be undone.",
     "statusSeen": "Seen by office",
     "statusPending": "Awaiting review",
-    "officeNotes": "Office notes"
+    "officeNotes": "Office notes",
+    "brandTagline": "Client Portal",
+    "welcome": "Welcome back,",
+    "welcomeBody": "Here you can manage your matters, submit documents and stay updated on your progress.",
+    "client": "there",
+    "promo": "Trusted legal support in Cyprus and beyond.",
+    "notifications": "Notifications",
+    "noNotificationsTitle": "You're all caught up",
+    "noNotificationsBody": "New updates from your legal team will appear here.",
+    "backToSite": "Back to website",
+    "viewAll": "View all",
+    "myCases": "My Cases",
+    "recentActivity": "Recent Activity",
+    "legalTeam": "Your Legal Team",
+    "sendMessage": "Send a message",
+    "bookAppointment": "Book an appointment",
+    "needHelp": "Need Help?",
+    "needHelpBody": "Our team is here to support you. Reach out any time and we'll get back to you promptly.",
+    "contactSupport": "Contact Support",
+    "contactOffice": "Contact the office",
+    "dropTitle": "Drag and drop your documents here",
+    "dropBrowse": "or click to browse",
+    "dropFormats": "Accepted formats: PDF, JPG, PNG (max 10 MB)",
+    "documentsIntro": "Securely upload and manage the documents for your matters.",
+    "documentsEmptyTitle": "No documents yet",
+    "documentsEmptyBody": "Upload a file above and it will appear here, with your office's review status and notes.",
+    "casesIntro": "Track the status and progress of your legal matters.",
+    "messagesIntro": "Secure messages with your legal team.",
+    "appointmentsIntro": "Your scheduled meetings with your lawyer.",
+    "billingIntro": "Your invoices and payment history.",
+    "profileIntro": "Your account details.",
+    "profileNote": "To update your details, please contact the office.",
+    "supportIntro": "We're here to help. Reach the office through any of the channels below.",
+    "supportNote": "Your first 30-minute consultation is complimentary. For urgent matters, please call the office directly.",
+    "nav": {
+      "dashboard": "Dashboard",
+      "cases": "My Cases",
+      "documents": "Upload Documents",
+      "messages": "Messages",
+      "appointments": "Appointments",
+      "billing": "Billing & Invoices",
+      "profile": "My Profile",
+      "support": "Support"
+    },
+    "actions": {
+      "upload": {
+        "title": "Upload Documents",
+        "body": "Securely submit documents for your matter."
+      },
+      "message": {
+        "title": "Send a Message",
+        "body": "Contact your legal team directly."
+      },
+      "appointment": {
+        "title": "Book an Appointment",
+        "body": "Schedule a meeting with your lawyer."
+      }
+    },
+    "activity": {
+      "uploaded": "Document uploaded",
+      "reviewed": "Reviewed by the office",
+      "note": "New note from your lawyer",
+      "emptyTitle": "No activity yet",
+      "emptyBody": "Your recent document and case updates will show up here."
+    },
+    "cases": {
+      "emptyTitle": "No cases open yet",
+      "emptyBody": "Your legal team will add your matters here. You'll see their status and updates at a glance."
+    },
+    "messages": {
+      "emptyTitle": "No messages yet",
+      "emptyBody": "Secure messaging with your legal team is coming soon. In the meantime, reach us directly."
+    },
+    "appointments": {
+      "emptyTitle": "No appointments scheduled",
+      "emptyBody": "Online booking is coming soon. Contact the office to arrange a meeting."
+    },
+    "billing": {
+      "emptyTitle": "No invoices yet",
+      "emptyBody": "When your legal team issues an invoice, it will appear here."
+    },
+    "support": {
+      "callLabel": "Call us",
+      "emailLabel": "Email",
+      "hoursLabel": "Office hours",
+      "officeLabel": "Office"
+    }
   },
   "admin": {
     "metaTitle": "Office Admin — Polykarpou & Co. LLC",

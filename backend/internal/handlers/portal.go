@@ -152,9 +152,22 @@ func uidFrom(c *gin.Context) int64 {
 	return id
 }
 
-// Me returns the authenticated user's email (used to confirm a valid session).
+// Me returns the authenticated user's profile (used to greet them and confirm
+// a valid session).
 func (h *PortalHandler) Me(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{"uid": uidFrom(c)})
+	u, err := h.store.GetUserByID(uidFrom(c))
+	if err != nil {
+		h.log.Error("lookup profile failed", "error", err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "server_error"})
+		return
+	}
+	if u == nil {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "unauthorized"})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"uid": u.ID, "email": u.Email, "name": u.Name, "surname": u.Surname, "phone": u.Phone,
+	})
 }
 
 // Upload stores a single file for the authenticated user.

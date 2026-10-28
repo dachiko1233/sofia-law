@@ -134,6 +134,7 @@ type Client struct {
 type PortalStore interface {
 	CreateUser(email, passwordHash, name, surname, phone string) (int64, error)
 	GetUserByEmail(email string) (*User, error)
+	GetUserByID(id int64) (*User, error)
 	AddDocument(userID int64, name, mime string, size int64, data []byte) (int64, error)
 	ListDocuments(userID int64) ([]Document, error)
 	GetDocument(userID, docID int64) (*Document, []byte, error)
@@ -176,6 +177,19 @@ func (s *SQLiteStore) GetUserByEmail(email string) (*User, error) {
 	email = strings.ToLower(strings.TrimSpace(email))
 	row := s.db.QueryRow(
 		`SELECT id, email, password_hash, name, surname, phone FROM users WHERE email = ?;`, email)
+	var u User
+	if err := row.Scan(&u.ID, &u.Email, &u.PasswordHash, &u.Name, &u.Surname, &u.Phone); err != nil {
+		if err == sql.ErrNoRows {
+			return nil, nil
+		}
+		return nil, err
+	}
+	return &u, nil
+}
+
+func (s *SQLiteStore) GetUserByID(id int64) (*User, error) {
+	row := s.db.QueryRow(
+		`SELECT id, email, password_hash, name, surname, phone FROM users WHERE id = ?;`, id)
 	var u User
 	if err := row.Scan(&u.ID, &u.Email, &u.PasswordHash, &u.Name, &u.Surname, &u.Phone); err != nil {
 		if err == sql.ErrNoRows {
