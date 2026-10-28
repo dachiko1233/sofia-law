@@ -9,7 +9,7 @@ export default function NotFoundPage() {
   return (
     <div className="bg-bg text-ink">
       <Seo
-        title="Page not found — Polykarpou Law"
+        title="Page not found — Polykarpou & Co. LLC"
         description="The page you requested could not be found."
       />
       <div className="pa-head text-slate-doc">

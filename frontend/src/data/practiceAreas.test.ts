@@ -35,7 +35,7 @@ describe('practice areas data', () => {
       expect(area.why.length).toBe(3);
       expect(area.faqs.length).toBe(3);
       expect(area.ctaTitle).toBeTruthy();
-      expect(area.metaTitle).toContain('Polykarpou Law');
+      expect(area.metaTitle).toContain('Polykarpou & Co. LLC');
     }
   });
 

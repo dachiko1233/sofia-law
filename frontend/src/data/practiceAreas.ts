@@ -99,7 +99,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     overviewTitle: 'Legal structure that lets your business grow.',
     overviewParas: [
       'Whether you are registering a new Cyprus company, bringing in a partner or signing a major supplier agreement, the right documents protect you from costly disputes later.',
-      'I work with start-ups, family businesses and international clients doing business through Cyprus, giving clear advice in plain language and drafting agreements that match how your business actually operates. [Adjust to your own experience and typical clients.]',
+      'I work with start-ups, family businesses and international clients doing business through Cyprus, giving clear advice in plain language and drafting agreements that match how your business actually operates.',
     ],
     servicesTitle: 'How I can help',
     services: [
@@ -158,7 +158,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     faqs: [
       {
         q: 'How long does it take to register a company in Cyprus?',
-        a: 'Timing depends on name approval and the documents required. I will give you a realistic timeline once we discuss your structure. [Confirm your usual timeframe]',
+        a: 'It depends on the situation — on name approval and the documents required — but typically it takes from 1 to 3 weeks.',
       },
       {
         q: 'Do I need a shareholder agreement?',
@@ -171,7 +171,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     ],
     ctaTitle: 'Discuss your business matter',
     ctaText: 'The first 30-minute consultation is free and confidential.',
-    metaTitle: 'Corporate & Commercial — Polykarpou Law',
+    metaTitle: 'Corporate & Commercial — Polykarpou & Co. LLC',
     metaDescription:
       'Practical legal support for companies, founders and investors in Cyprus — from setting up a business to the contracts and decisions that keep it running.',
   },
@@ -183,7 +183,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     overviewTitle: 'Protecting careers and clubs on and off the field.',
     overviewParas: [
       'Sport is a business as much as a passion. A clear contract, the right image-rights terms and proper handling of disciplinary matters protect both the athlete’s career and the club’s interests.',
-      'I advise players, coaches, agents and clubs on contracts, transfers, sponsorship and disputes, and represent them before sporting bodies and dispute panels. [Adjust to your own experience and typical clients.]',
+      'I advise players, coaches, agents and clubs on contracts, transfers, sponsorship and disputes, and represent them before sporting bodies and dispute panels.',
     ],
     servicesTitle: 'How I can help',
     services: [
@@ -255,7 +255,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     ],
     ctaTitle: 'Discuss your sports matter',
     ctaText: 'The first 30-minute consultation is free and confidential.',
-    metaTitle: 'Sports Law — Polykarpou Law',
+    metaTitle: 'Sports Law — Polykarpou & Co. LLC',
     metaDescription:
       'Legal support for athletes, clubs, agents and sports bodies in Cyprus — from playing and sponsorship contracts to disciplinary and regulatory disputes.',
   },
@@ -267,7 +267,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     overviewTitle: 'Financing that is properly documented and secure.',
     overviewParas: [
       'Whether you are borrowing, lending or structuring a financial transaction, the terms of the facility and the security behind it decide how protected you are if things go wrong.',
-      'I advise borrowers, lenders and businesses on loan agreements, security, refinancing and regulatory questions — explained in plain language, with documents that match the deal in front of you. [Adjust to your own experience and typical clients.]',
+      'I advise borrowers, lenders and businesses on loan agreements, security, refinancing and regulatory questions — explained in plain language, with documents that match the deal in front of you.',
     ],
     servicesTitle: 'How I can help',
     services: [
@@ -339,7 +339,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     ],
     ctaTitle: 'Discuss your financing matter',
     ctaText: 'The first 30-minute consultation is free and confidential.',
-    metaTitle: 'Banking & Finance — Polykarpou Law',
+    metaTitle: 'Banking & Finance — Polykarpou & Co. LLC',
     metaDescription:
       'Clear legal support for banking, lending and financial transactions in Cyprus — from loan and security documents to regulatory compliance.',
   },
@@ -351,7 +351,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     overviewTitle: 'Know exactly what you are buying.',
     overviewParas: [
       'Property is often the largest purchase people make. Before you pay a deposit, I check the title, encumbrances and permits so there are no surprises after the keys are handed over.',
-      'I advise local and foreign buyers, sellers, developers and landlords in Limassol and across Cyprus — from the first offer to registration of the contract and the transfer of title. [Adjust to your own experience.]',
+      'I advise local and foreign buyers, sellers, developers and landlords in Limassol and across Cyprus — from the first offer to registration of the contract and the transfer of title.',
     ],
     servicesTitle: 'How I can help',
     services: [
@@ -414,7 +414,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
       },
       {
         q: 'Can a foreign buyer purchase property in Cyprus?',
-        a: 'Yes, though some non-EU buyers need permission for certain purchases. I can explain what applies in your case. [Confirm current rules before publishing]',
+        a: 'Yes, though some non-EU buyers need permission for certain purchases. I can explain what applies in your case.',
       },
       {
         q: 'What is depositing the sale contract at the Land Registry?',
@@ -423,7 +423,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     ],
     ctaTitle: 'Planning a property purchase?',
     ctaText: 'Speak to me before you sign or pay a deposit.',
-    metaTitle: 'Real Estate & Construction — Polykarpou Law',
+    metaTitle: 'Real Estate & Construction — Polykarpou & Co. LLC',
     metaDescription:
       'Buying, selling or building property in Cyprus with confidence — careful checks, clear contracts and protection for your investment.',
   },
@@ -435,7 +435,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     overviewTitle: 'Support for life’s hardest moments.',
     overviewParas: [
       'Family matters are personal. I listen first, explain your options clearly and aim for solutions that reduce conflict — while standing firm in court when that is needed.',
-      'I represent clients before the Family Courts of Cyprus in divorce, parental care, maintenance and property claims, and help families plan and settle estates. [Adjust to your own experience.]',
+      'I represent clients before the Family Courts of Cyprus in divorce, parental care, maintenance and property claims, and help families plan and settle estates.',
     ],
     servicesTitle: 'How I can help',
     services: [
@@ -507,7 +507,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     ],
     ctaTitle: 'Talk it through, in confidence',
     ctaText: 'A first conversation costs nothing and commits you to nothing.',
-    metaTitle: 'Family & Inheritance — Polykarpou Law',
+    metaTitle: 'Family & Inheritance — Polykarpou & Co. LLC',
     metaDescription:
       'Sensitive, practical guidance through divorce, children’s arrangements and inheritance — with your family’s future always in focus.',
   },
@@ -519,7 +519,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     overviewTitle: 'Fair treatment at work, on both sides.',
     overviewParas: [
       'If you have been dismissed, are owed wages or are facing a dispute with your employer, I explain your rights and the steps to protect them.',
-      'For employers, I prepare contracts and policies that comply with the law and help handle terminations and redundancies correctly — before they turn into claims. [Adjust to your own experience.]',
+      'For employers, I prepare contracts and policies that comply with the law and help handle terminations and redundancies correctly — before they turn into claims.',
     ],
     servicesTitle: 'How I can help',
     services: [
@@ -591,7 +591,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     ],
     ctaTitle: 'Problem at work?',
     ctaText: 'Get clear advice on your rights before you sign or respond to anything.',
-    metaTitle: 'Employment — Polykarpou Law',
+    metaTitle: 'Employment — Polykarpou & Co. LLC',
     metaDescription:
       'Clear advice for employees and employers on contracts, dismissals and workplace disputes under Cyprus employment law.',
   },
@@ -603,7 +603,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     overviewTitle: 'Your ideas are assets. Protect them.',
     overviewParas: [
       'Limassol is home to a growing number of tech and online businesses. Registering your trademarks, owning your code and handling personal data correctly are essential from day one.',
-      'I help companies register and enforce intellectual property, draft technology contracts and comply with the GDPR — explained in plain language, without unnecessary jargon. [Adjust to your own experience.]',
+      'I help companies register and enforce intellectual property, draft technology contracts and comply with the GDPR — explained in plain language, without unnecessary jargon.',
     ],
     servicesTitle: 'How I can help',
     services: [
@@ -675,7 +675,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     ],
     ctaTitle: 'Protect your brand and data',
     ctaText: 'Start with a quick review of where you stand today.',
-    metaTitle: 'Tech, IP & Data Protection — Polykarpou Law',
+    metaTitle: 'Tech, IP & Data Protection — Polykarpou & Co. LLC',
     metaDescription:
       'Protecting your brand, your ideas and your customers’ data — with practical advice for tech companies and digital businesses.',
   },
@@ -687,7 +687,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     overviewTitle: 'A smooth move to Cyprus.',
     overviewParas: [
       'Every year many families, professionals and investors relocate to Limassol. The right permit depends on your nationality, your plans and your income — and a well-prepared application saves months.',
-      'I advise on the available routes, prepare and submit applications, and stay with you through renewals and family reunification. Advice is available in English, Greek and Russian. [Adjust to your own experience.]',
+      'I advise on the available routes, prepare and submit applications, and stay with you through renewals and family reunification. Advice is available in English, Greek and Russian.',
     ],
     servicesTitle: 'How I can help',
     services: [
@@ -746,7 +746,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     faqs: [
       {
         q: 'Which permit is right for me?',
-        a: 'That depends on your nationality, whether you will work in Cyprus, and your income or investment. I review your situation and recommend the most suitable route. [Confirm current schemes before publishing]',
+        a: 'That depends on your nationality, whether you will work in Cyprus, and your income or investment. I review your situation and recommend the most suitable route.',
       },
       {
         q: 'Can my family come with me?',
@@ -759,7 +759,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     ],
     ctaTitle: 'Planning your move to Cyprus?',
     ctaText: 'Tell me your situation and I will outline the options that fit.',
-    metaTitle: 'Immigration & Residency — Polykarpou Law',
+    metaTitle: 'Immigration & Residency — Polykarpou & Co. LLC',
     metaDescription:
       'Moving to Cyprus to live, work or invest — clear guidance on permits, applications and every step of the process.',
   },
@@ -771,7 +771,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     overviewTitle: 'Your wealth and your family, carefully planned.',
     overviewParas: [
       'Looking after personal and family wealth means thinking ahead — about succession, tax and the structures that protect what you have built, at home and across borders.',
-      'I advise individuals, families and private banks on wills, estates, trusts, tax planning and relocation to Cyprus, coordinating the legal, personal and cross-border sides of each matter. [Adjust to your own experience and typical clients.]',
+      'I advise individuals, families and private banks on wills, estates, trusts, tax planning and relocation to Cyprus, coordinating the legal, personal and cross-border sides of each matter.',
     ],
     servicesTitle: 'How I can help',
     services: [
@@ -843,7 +843,7 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     ],
     ctaTitle: 'Plan for your family’s future',
     ctaText: 'The first 30-minute consultation is free and confidential.',
-    metaTitle: 'Private Client — Polykarpou Law',
+    metaTitle: 'Private Client — Polykarpou & Co. LLC',
     metaDescription:
       'Discreet, personal advice for individuals and families in Cyprus and abroad — from wills and succession to trusts, tax and relocation.',
   },

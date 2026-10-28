@@ -1,6 +1,6 @@
-# Polykarpou Law — website
+# Polykarpou & Co. LLC — website
 
-Production website for **Polykarpou Law**, an independent law practice in
+Production website for **Polykarpou & Co. LLC**, an independent law practice in
 Limassol, Cyprus (advocate Sofia Polykarpou).
 
 - **Frontend:** React 19 + TypeScript + Vite + Tailwind CSS v4 + React Router,

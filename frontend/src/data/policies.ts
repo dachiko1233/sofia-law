@@ -32,7 +32,7 @@ export type PolicyMap = Record<PolicyKey, Policy>;
 
 export const POLICIES_EN: PolicyMap = {
   privacy: {
-    lead: 'This policy explains how Polykarpou Law collects and uses personal data when you visit this website, contact us or become a client, in line with the EU General Data Protection Regulation (GDPR) and Cyprus data protection law.',
+    lead: 'This policy explains how Polykarpou & Co. LLC collects and uses personal data when you visit this website, contact us or become a client, in line with the EU General Data Protection Regulation (GDPR) and Cyprus data protection law.',
     sections: [
       {
         id: 'who',
@@ -40,7 +40,7 @@ export const POLICIES_EN: PolicyMap = {
         blocks: [
           {
             type: 'p',
-            text: 'The data controller is **Polykarpou Law**, [Full Name], Advocate, Limassol, Cyprus. Email: [name@domain.com.cy] · Phone: +357 97 776 761.',
+            text: 'The data controller is **Polykarpou & Co. LLC**, [Full Name], Advocate, Limassol, Cyprus. Email: [name@domain.com.cy] · Phone: +357 97 776 761.',
           },
         ],
       },
@@ -263,7 +263,7 @@ export const POLICIES_EN: PolicyMap = {
           {
             type: 'deflist',
             rows: [
-              ['Name', 'Polykarpou Law — [Full Name], Advocate'],
+              ['Name', 'Polykarpou & Co. LLC — [Full Name], Advocate'],
               ['Address', 'Limassol, Cyprus'],
               ['Phone', '+357 97 776 761'],
               ['Email', '[name@domain.com.cy]'],
@@ -310,7 +310,7 @@ export const POLICIES_EN: PolicyMap = {
         blocks: [
           {
             type: 'p',
-            text: 'All content on this website, including text, design and logos, belongs to Polykarpou Law or is used with permission. You may not copy or reuse it for commercial purposes without our written consent. Images are used under licence from their respective owners.',
+            text: 'All content on this website, including text, design and logos, belongs to Polykarpou & Co. LLC or is used with permission. You may not copy or reuse it for commercial purposes without our written consent. Images are used under licence from their respective owners.',
           },
         ],
       },
