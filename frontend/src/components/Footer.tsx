@@ -129,10 +129,14 @@ export default function Footer({ variant = 'full', activePolicy }: Props) {
           </div>
 
           {/* Newsletter */}
-          <div className="flex flex-col gap-3.5">
-            <span className="font-semibold text-white">{t('newsletter.heading')}</span>
-            <span>{t('newsletter.blurb')}</span>
-            <NewsletterForm />
+          <div className="col-span-2 flex flex-col gap-3.5 min-[640px]:max-[959px]:flex-row min-[640px]:max-[959px]:items-center min-[640px]:max-[959px]:justify-between min-[960px]:col-span-1">
+            <div className="flex flex-col gap-1.5">
+              <span className="font-semibold text-white">{t('newsletter.heading')}</span>
+              <span>{t('newsletter.blurb')}</span>
+            </div>
+            <div className="w-full min-[640px]:max-[959px]:max-w-[420px]">
+              <NewsletterForm />
+            </div>
           </div>
         </div>
 

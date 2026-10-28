@@ -6,27 +6,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://polykarpoulaw.com/expertise/banking-finance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://polykarpoulaw.com/expertise/corporate</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://polykarpoulaw.com/expertise/litigation</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://polykarpoulaw.com/expertise/criminal</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://polykarpoulaw.com/expertise/real-estate</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://polykarpoulaw.com/expertise/family</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36,12 +21,32 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://polykarpoulaw.com/expertise/tech-ip</loc>
+    <loc>https://polykarpoulaw.com/expertise/family</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://polykarpoulaw.com/expertise/immigration</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://polykarpoulaw.com/expertise/private-client</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://polykarpoulaw.com/expertise/real-estate</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://polykarpoulaw.com/expertise/sports-law</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://polykarpoulaw.com/expertise/tech-ip</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

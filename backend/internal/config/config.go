@@ -2,19 +2,21 @@
 // No secrets are ever hard-coded; see .env.example at the repo root.
 package config
 
-import (
-	"os"
-	"strconv"
-)
+import "os"
 
 type Config struct {
-	Port          string
-	SMTPHost      string
-	SMTPPort      int
-	SMTPUser      string
-	SMTPPass      string
-	MailFrom      string
-	MailTo        string
+	Port string
+
+	// Email is sent via the Resend API (https://resend.com).
+	ResendAPIKey string
+	MailFrom     string
+	MailTo       string
+	// DomainVerified gates the visitor confirmation email. Until the sending
+	// domain is verified in Resend, Resend only delivers to your own address,
+	// so confirmations to visitors are skipped. Set DOMAIN_VERIFIED=true once
+	// your domain is verified.
+	DomainVerified bool
+
 	AllowedOrigin string
 	DBPath        string
 
@@ -32,28 +34,20 @@ func getenv(key, fallback string) string {
 
 // Load reads configuration from the environment, applying sensible dev defaults.
 func Load() Config {
-	port := getenv("SMTP_PORT", "587")
-	smtpPort, err := strconv.Atoi(port)
-	if err != nil {
-		smtpPort = 587
-	}
-
 	return Config{
-		Port:          getenv("PORT", "8080"),
-		SMTPHost:      os.Getenv("SMTP_HOST"),
-		SMTPPort:      smtpPort,
-		SMTPUser:      os.Getenv("SMTP_USER"),
-		SMTPPass:      os.Getenv("SMTP_PASS"),
-		MailFrom:      os.Getenv("MAIL_FROM"),
-		MailTo:        os.Getenv("MAIL_TO"),
-		AllowedOrigin: getenv("ALLOWED_ORIGIN", "http://localhost:5173"),
-		DBPath:        getenv("DB_PATH", "./data/polykarpou.db"),
-		ServeFrontend: os.Getenv("SERVE_FRONTEND") == "true",
-		FrontendDir:   getenv("FRONTEND_DIR", "../frontend/dist"),
+		Port:           getenv("PORT", "8080"),
+		ResendAPIKey:   os.Getenv("RESEND_API_KEY"),
+		MailFrom:       os.Getenv("MAIL_FROM"),
+		MailTo:         os.Getenv("MAIL_TO"),
+		DomainVerified: os.Getenv("DOMAIN_VERIFIED") == "true",
+		AllowedOrigin:  getenv("ALLOWED_ORIGIN", "http://localhost:5173"),
+		DBPath:         getenv("DB_PATH", "./data/polykarpou.db"),
+		ServeFrontend:  os.Getenv("SERVE_FRONTEND") == "true",
+		FrontendDir:    getenv("FRONTEND_DIR", "../frontend/dist"),
 	}
 }
 
-// SMTPConfigured reports whether enough SMTP settings exist to actually send mail.
-func (c Config) SMTPConfigured() bool {
-	return c.SMTPHost != "" && c.MailFrom != "" && c.MailTo != ""
+// ResendConfigured reports whether enough settings exist to actually send mail.
+func (c Config) ResendConfigured() bool {
+	return c.ResendAPIKey != "" && c.MailFrom != "" && c.MailTo != ""
 }

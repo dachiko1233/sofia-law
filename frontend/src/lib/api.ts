@@ -9,6 +9,8 @@ export interface ContactPayload {
   area: string;
   message: string;
   consent: boolean;
+  /** UI language the enquiry was submitted from (en/gr/ru). */
+  language: string;
   /** Honeypot — must stay empty for real users. */
   company?: string;
 }

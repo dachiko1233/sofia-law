@@ -16,8 +16,8 @@ type Status = 'idle' | 'loading' | 'success' | 'error';
 // the visible label is translated.
 const AREAS = [
   { key: 'corporate', value: 'Corporate' },
-  { key: 'litigation', value: 'Litigation' },
-  { key: 'criminal', value: 'Criminal' },
+  { key: 'privateClient', value: 'Private Client' },
+  { key: 'bankingFinance', value: 'Banking & Finance' },
   { key: 'realEstate', value: 'Real Estate' },
   { key: 'family', value: 'Family' },
   { key: 'other', value: 'Other' },
@@ -32,7 +32,7 @@ const inputBase =
   'border-0 border-b-[1.5px] bg-transparent py-3 text-[17px] min-h-[48px] text-ink font-sans focus:outline-none';
 
 export default function ContactForm() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [values, setValues] = useState<ContactValues>({
     firstName: '',
     lastName: '',
@@ -78,7 +78,7 @@ export default function ContactForm() {
 
     setStatus('loading');
     try {
-      await submitContact({ ...values, company });
+      await submitContact({ ...values, company, language: i18n.language });
       setStatus('success');
     } catch {
       setStatus('error');

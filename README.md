@@ -3,8 +3,8 @@
 Production website for **Polykarpou Law**, an independent law practice in
 Limassol, Cyprus (advocate Sofia Polykarpou).
 
-- **Frontend:** React 18 + TypeScript + Vite + Tailwind CSS + React Router, with
-  `react-i18next` (EN / GR / RU) and `react-helmet-async` for SEO.
+- **Frontend:** React 19 + TypeScript + Vite + Tailwind CSS v4 + React Router,
+  with `react-i18next` (EN / GR / RU) and `react-helmet-async` for SEO.
 - **Backend:** Go + Gin — contact and newsletter APIs, SQLite for subscribers,
   SMTP email, rate limiting and a honeypot. In production it also serves the
   built frontend.
@@ -13,21 +13,17 @@ Limassol, Cyprus (advocate Sofia Polykarpou).
 .
 ├── frontend/     React app (components, pages, i18n, data)
 ├── backend/      Go + Gin API (cmd/server, internal/*)
-├── designs/      the original approved HTML designs (reference — do not delete)
 ├── Makefile      run / build / test everything
 ├── .env.example  backend configuration template
 └── README.md
 ```
 
-The approved static designs live in `designs/` and are the visual source of
-truth. The production site reproduces them exactly.
-
 ---
 
 ## Prerequisites
 
-- **Node.js** ≥ 18 (developed on 24) and npm
-- **Go** ≥ 1.23
+- **Node.js** ≥ 20.19 (developed on 24) and npm — required by Vite 8
+- **Go** ≥ 1.27
 
 ## Quick start
 
@@ -199,14 +195,14 @@ docker run -p 8080:8080 --env-file .env -e SERVE_FRONTEND=true polykarpou-law
 
 Everything in `[square brackets]` (phone, email, address, Bar registration/VAT
 numbers, retention periods, portrait photo, “Last updated” dates) is a
-placeholder carried over verbatim from the approved designs. Replace them with
+placeholder carried over verbatim from the original content. Replace them with
 real values before going live. Update `https://polykarpoulaw.com` in
 `frontend/src/components/Seo.tsx`, `frontend/public/sitemap.xml` and
 `frontend/public/robots.txt` to the final domain.
 
 The EN/GR/RU switcher appears in the top bar on the home page and inside the
-mobile menu on every page (matching the designs, which place the switcher only
-in the home top bar on desktop).
+mobile menu on every page (the switcher appears only in the home top bar on
+desktop).
 
 A pure-Go SQLite driver (`modernc.org/sqlite`) is used so the backend builds
 without cgo/gcc.

@@ -25,7 +25,6 @@ export default function Header({ variant }: Props) {
     { to: '/', label: t('nav.home') },
     { to: '/#expertise', label: t('nav.expertise') },
     { to: '/#careers', label: t('nav.careers') },
-    { to: '/#about', label: t('nav.about') },
     { to: '/#contact', label: t('nav.contact') },
   ];
 
@@ -36,7 +35,7 @@ export default function Header({ variant }: Props) {
       {/* Top bar — only on the home hero (matches the design) */}
       {variant === 'home' && (
         <div className="wrap flex h-[53px] items-center justify-between gap-4 border-b border-[#5A4433] text-[14px]">
-          <div className="hidden gap-7 min-[960px]:flex">
+          <div className="hidden gap-7 min-[768px]:flex">
             <a
               href={`tel:${t('contact.phone').replace(/\s/g, '')}`}
               className="text-slate-light no-underline"
@@ -100,23 +99,24 @@ export default function Header({ variant }: Props) {
       {open && (
         <div
           id="mobile-menu"
-          className="wrap flex flex-col gap-5 border-t border-white/[0.12] py-6 min-[960px]:hidden"
+          className="absolute inset-x-0 z-50 border-t border-white/[0.12] bg-black/40 shadow-2xl backdrop-blur-md min-[960px]:hidden"
         >
-          <nav className="flex flex-col gap-4" aria-label={t('nav.menu')}>
-            {navItems.map((item) => (
-              <AnchorLink
-                key={item.to}
-                to={item.to}
-                className="text-lg font-medium text-white no-underline hover:text-accent"
-              >
-                {item.label}
-              </AnchorLink>
-            ))}
-          </nav>
-          <LanguageSwitcher tone="dark" />
-          <Button to="/#contact" variant="navy" size="sm" className="self-start">
-            {t('buttons.getInTouch')}
-          </Button>
+          <div className="wrap flex flex-col gap-5 py-6">
+            <nav className="flex flex-col gap-4" aria-label={t('nav.menu')}>
+              {navItems.map((item) => (
+                <AnchorLink
+                  key={item.to}
+                  to={item.to}
+                  className="text-lg font-medium text-white no-underline hover:text-accent"
+                >
+                  {item.label}
+                </AnchorLink>
+              ))}
+            </nav>
+            <Button to="/#contact" variant="navy" size="sm" className="self-start">
+              {t('buttons.getInTouch')}
+            </Button>
+          </div>
         </div>
       )}
     </div>

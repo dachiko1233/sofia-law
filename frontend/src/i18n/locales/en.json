@@ -91,8 +91,8 @@
     },
     "areas": {
       "corporate": "Corporate",
-      "litigation": "Litigation",
-      "criminal": "Criminal",
+      "privateClient": "Private Client",
+      "bankingFinance": "Banking & Finance",
       "realEstate": "Real Estate",
       "family": "Family",
       "other": "Other"
@@ -150,7 +150,7 @@
   },
   "meta": {
     "homeTitle": "Polykarpou Law — Limassol, Cyprus",
-    "homeDescription": "Independent law practice in Limassol, Cyprus. Strategic, modern legal counsel for individuals and businesses — corporate, litigation, criminal, real estate, family, employment, tech & IP, and immigration.",
+    "homeDescription": "Independent law practice in Limassol, Cyprus. Strategic, modern legal counsel for individuals and businesses — corporate, sports law, banking & finance, real estate, family, employment, tech & IP, immigration, and private client.",
     "privacyTitle": "Privacy Policy — Polykarpou Law",
     "privacyDescription": "How Polykarpou Law collects and uses personal data, in line with the GDPR and Cyprus data protection law.",
     "cookiesTitle": "Cookie Policy — Polykarpou Law",

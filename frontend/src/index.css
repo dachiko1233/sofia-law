@@ -167,6 +167,114 @@
     background-position: center right;
   }
 
+  /* Per-area header image: Corporate & Commercial */
+  .pa-head--corporate {
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(12, 12, 14, 0.9) 0%,
+        rgba(12, 12, 14, 0.72) 45%,
+        rgba(12, 12, 14, 0.25) 100%
+      ),
+      url('/images/corporate-commercial.jpg');
+  }
+
+  /* Per-area header image: Employment */
+  .pa-head--employment {
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(12, 12, 14, 0.9) 0%,
+        rgba(12, 12, 14, 0.72) 45%,
+        rgba(12, 12, 14, 0.25) 100%
+      ),
+      url('/images/employment.jpg');
+  }
+
+  /* Per-area header image: Real Estate & Construction */
+  .pa-head--real-estate {
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(12, 12, 14, 0.9) 0%,
+        rgba(12, 12, 14, 0.72) 45%,
+        rgba(12, 12, 14, 0.25) 100%
+      ),
+      url('/images/real-estate.jpg');
+  }
+
+  /* Per-area header image: Tech, IP & Data Protection */
+  .pa-head--tech-ip {
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(12, 12, 14, 0.9) 0%,
+        rgba(12, 12, 14, 0.72) 45%,
+        rgba(12, 12, 14, 0.25) 100%
+      ),
+      url('/images/tech-ip.jpg');
+  }
+
+  /* Per-area header image: Immigration & Residency */
+  .pa-head--immigration {
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(12, 12, 14, 0.9) 0%,
+        rgba(12, 12, 14, 0.72) 45%,
+        rgba(12, 12, 14, 0.25) 100%
+      ),
+      url('/images/immigration.jpg');
+  }
+
+  /* Per-area header image: Family & Inheritance */
+  .pa-head--family {
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(12, 12, 14, 0.9) 0%,
+        rgba(12, 12, 14, 0.72) 45%,
+        rgba(12, 12, 14, 0.25) 100%
+      ),
+      url('/images/family.jpg');
+  }
+
+  /* Per-area header image: Banking & Finance */
+  .pa-head--banking-finance {
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(12, 12, 14, 0.9) 0%,
+        rgba(12, 12, 14, 0.72) 45%,
+        rgba(12, 12, 14, 0.25) 100%
+      ),
+      url('/images/banking-finance.jpg');
+  }
+
+  /* Per-area header image: Sports Law */
+  .pa-head--sports-law {
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(12, 12, 14, 0.9) 0%,
+        rgba(12, 12, 14, 0.72) 45%,
+        rgba(12, 12, 14, 0.25) 100%
+      ),
+      url('/images/sports-law.jpg');
+  }
+
+  /* Per-area header image: Private Client */
+  .pa-head--private-client {
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(12, 12, 14, 0.9) 0%,
+        rgba(12, 12, 14, 0.72) 45%,
+        rgba(12, 12, 14, 0.25) 100%
+      ),
+      url('/images/private-client.jpg');
+  }
+
   @media (max-width: 960px) {
     .hero-wrap {
       background-image:
@@ -177,6 +285,51 @@
       background-image:
         linear-gradient(180deg, rgba(12, 12, 14, 0.84), rgba(12, 12, 14, 0.76)),
         url('/images/hero-justice.jpg');
+    }
+    .pa-head--corporate {
+      background-image:
+        linear-gradient(180deg, rgba(12, 12, 14, 0.84), rgba(12, 12, 14, 0.76)),
+        url('/images/corporate-commercial.jpg');
+    }
+    .pa-head--employment {
+      background-image:
+        linear-gradient(180deg, rgba(12, 12, 14, 0.84), rgba(12, 12, 14, 0.76)),
+        url('/images/employment.jpg');
+    }
+    .pa-head--real-estate {
+      background-image:
+        linear-gradient(180deg, rgba(12, 12, 14, 0.84), rgba(12, 12, 14, 0.76)),
+        url('/images/real-estate.jpg');
+    }
+    .pa-head--tech-ip {
+      background-image:
+        linear-gradient(180deg, rgba(12, 12, 14, 0.84), rgba(12, 12, 14, 0.76)),
+        url('/images/tech-ip.jpg');
+    }
+    .pa-head--immigration {
+      background-image:
+        linear-gradient(180deg, rgba(12, 12, 14, 0.84), rgba(12, 12, 14, 0.76)),
+        url('/images/immigration.jpg');
+    }
+    .pa-head--family {
+      background-image:
+        linear-gradient(180deg, rgba(12, 12, 14, 0.84), rgba(12, 12, 14, 0.76)),
+        url('/images/family.jpg');
+    }
+    .pa-head--banking-finance {
+      background-image:
+        linear-gradient(180deg, rgba(12, 12, 14, 0.84), rgba(12, 12, 14, 0.76)),
+        url('/images/banking-finance.jpg');
+    }
+    .pa-head--sports-law {
+      background-image:
+        linear-gradient(180deg, rgba(12, 12, 14, 0.84), rgba(12, 12, 14, 0.76)),
+        url('/images/sports-law.jpg');
+    }
+    .pa-head--private-client {
+      background-image:
+        linear-gradient(180deg, rgba(12, 12, 14, 0.84), rgba(12, 12, 14, 0.76)),
+        url('/images/private-client.jpg');
     }
   }
 

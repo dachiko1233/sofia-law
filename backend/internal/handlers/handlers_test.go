@@ -137,7 +137,7 @@ func TestContact_Honeypot(t *testing.T) {
 }
 
 func TestContact_MailFailure(t *testing.T) {
-	m := &mockMailer{failEnquiry: errors.New("smtp down")}
+	m := &mockMailer{failEnquiry: errors.New("resend down")}
 	_, r := testHandler(m, &mockStore{})
 	w := postJSON(r, "/api/contact", validContactBody())
 	if w.Code != http.StatusBadGateway {

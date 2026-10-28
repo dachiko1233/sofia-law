@@ -22,6 +22,10 @@ import (
 func main() {
 	log := slog.New(slog.NewJSONHandler(os.Stdout, &slog.HandlerOptions{Level: slog.LevelInfo}))
 
+	// Load a local .env for development (repo root or backend/). Real env vars
+	// always take precedence and are the norm in production.
+	config.LoadEnvFile(".env", "../.env")
+
 	cfg := config.Load()
 
 	db, err := store.NewSQLite(cfg.DBPath)

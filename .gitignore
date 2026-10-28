@@ -8,6 +8,10 @@ backend/bin/
 backend/polykarpou-law
 backend/server
 
+# TypeScript / Vite build artifacts
+*.tsbuildinfo
+frontend/vite.config.d.ts
+
 # Environment
 .env
 *.env

@@ -38,6 +38,9 @@ type ContactInput struct {
 	Area      string `json:"area"`
 	Message   string `json:"message"`
 	Consent   bool   `json:"consent"`
+	// Language is the UI language the visitor submitted from (en/gr/ru). It is
+	// informational only (included in the enquiry email), so it is not validated.
+	Language string `json:"language"`
 	// Company is a honeypot: it must stay empty for genuine submissions.
 	Company string `json:"company"`
 }

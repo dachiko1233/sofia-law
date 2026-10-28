@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # ---- Stage 1: build the frontend ------------------------------------------
-FROM node:20-alpine AS frontend
+FROM node:24-alpine AS frontend
 WORKDIR /app/frontend
 COPY frontend/package.json frontend/package-lock.json* ./
 RUN npm ci || npm install
@@ -9,7 +9,7 @@ COPY frontend/ ./
 RUN npm run build
 
 # ---- Stage 2: build the Go binary -----------------------------------------
-FROM golang:1.23-alpine AS backend
+FROM golang:1.27-alpine AS backend
 WORKDIR /app/backend
 COPY backend/go.mod backend/go.sum* ./
 RUN go mod download

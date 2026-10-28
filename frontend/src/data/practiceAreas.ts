@@ -1,4 +1,4 @@
-// Practice-area content for all 8 areas, keyed by language. The English map
+// Practice-area content for all 9 areas, keyed by language. The English map
 // below is the canonical structure; Greek and Russian live in sibling files and
 // are merged by the resolver, falling back to English for any missing entry.
 // [square-bracket] placeholders are kept verbatim and must NOT be translated.
@@ -48,38 +48,43 @@ export interface PracticeArea extends PracticeAreaContent {
 }
 
 // Fixed display order and numbering (identical across languages).
+// Ordered alphabetically by English title.
 export const PRACTICE_AREA_META: { slug: string; num: string }[] = [
   {
-    slug: 'corporate',
+    slug: 'banking-finance',
     num: '01',
   },
   {
-    slug: 'litigation',
+    slug: 'corporate',
     num: '02',
   },
   {
-    slug: 'criminal',
+    slug: 'employment',
     num: '03',
   },
   {
-    slug: 'real-estate',
+    slug: 'family',
     num: '04',
   },
   {
-    slug: 'family',
+    slug: 'immigration',
     num: '05',
   },
   {
-    slug: 'employment',
+    slug: 'private-client',
     num: '06',
   },
   {
-    slug: 'tech-ip',
+    slug: 'real-estate',
     num: '07',
   },
   {
-    slug: 'immigration',
+    slug: 'sports-law',
     num: '08',
+  },
+  {
+    slug: 'tech-ip',
+    num: '09',
   },
 ];
 
@@ -170,49 +175,49 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     metaDescription:
       'Practical legal support for companies, founders and investors in Cyprus — from setting up a business to the contracts and decisions that keep it running.',
   },
-  litigation: {
-    title: 'Litigation & Dispute Resolution',
-    homeBlurb: 'Civil and commercial disputes in all court instances.',
+  'sports-law': {
+    title: 'Sports Law',
+    homeBlurb: 'Contracts, transfers, disciplinary and regulatory matters.',
     intro:
-      'Firm, well-prepared representation before the Cyprus courts — and, where it serves you better, a negotiated settlement that avoids a long trial.',
-    overviewTitle: 'A clear strategy from the first letter to the final judgment.',
+      'Legal support for athletes, clubs, agents and sports bodies in Cyprus — from playing and sponsorship contracts to disciplinary and regulatory disputes.',
+    overviewTitle: 'Protecting careers and clubs on and off the field.',
     overviewParas: [
-      'Disputes cost time, money and peace of mind. I start by assessing the strength of your position honestly, so you can decide whether to negotiate, mediate or go to court.',
-      'I represent individuals and companies in civil and commercial claims, handle urgent interim applications, and follow through to enforcement so a judgment in your favour turns into a real result. [Adjust to your own experience.]',
+      'Sport is a business as much as a passion. A clear contract, the right image-rights terms and proper handling of disciplinary matters protect both the athlete’s career and the club’s interests.',
+      'I advise players, coaches, agents and clubs on contracts, transfers, sponsorship and disputes, and represent them before sporting bodies and dispute panels. [Adjust to your own experience and typical clients.]',
     ],
     servicesTitle: 'How I can help',
     services: [
       {
-        name: 'Civil claims',
-        desc: 'Bringing and defending claims before the District Courts of Cyprus.',
+        name: 'Playing & coaching contracts',
+        desc: 'Drafting and negotiating contracts for athletes and coaching staff.',
       },
       {
-        name: 'Commercial disputes',
-        desc: 'Breach of contract, unpaid invoices and disputes between businesses.',
+        name: 'Transfers & loans',
+        desc: 'Transfer agreements, loan deals and the paperwork behind them.',
       },
       {
-        name: 'Debt recovery',
-        desc: 'Demand letters, legal proceedings and recovery of what you are owed.',
+        name: 'Sponsorship & image rights',
+        desc: 'Endorsement, sponsorship and image-rights agreements.',
       },
       {
-        name: 'Interim orders',
-        desc: 'Urgent applications to freeze assets or prevent harmful action.',
+        name: 'Agent & representation agreements',
+        desc: 'Agreements between athletes and their agents or intermediaries.',
       },
       {
-        name: 'Enforcement of judgments',
-        desc: 'Turning a court decision into payment or action.',
+        name: 'Disciplinary proceedings',
+        desc: 'Representation in disciplinary and misconduct hearings.',
       },
       {
-        name: 'Appeals',
-        desc: 'Challenging or defending first-instance decisions on appeal.',
+        name: 'Sports disputes & arbitration',
+        desc: 'Claims before federations, tribunals and sports arbitration bodies.',
       },
       {
-        name: 'Mediation & negotiation',
-        desc: 'Resolving disputes out of court where that is in your interest.',
+        name: 'Club governance & regulation',
+        desc: 'Advising clubs and associations on rules, licensing and compliance.',
       },
       {
-        name: 'Arbitration',
-        desc: 'Representation in domestic and international arbitration proceedings.',
+        name: 'Doping & eligibility',
+        desc: 'Advice and defence in anti-doping and eligibility matters.',
       },
     ],
     approachTitle: 'Why clients work with me',
@@ -236,107 +241,107 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     faqTitle: 'Common questions',
     faqs: [
       {
-        q: 'Should I go to court or try to settle?',
-        a: 'It depends on the evidence, the costs and what you want to achieve. After reviewing your documents I will explain the realistic options so you can decide.',
+        q: 'Can you review a contract before I sign with a club or agent?',
+        a: 'Yes. I can review the terms, explain the obligations and risks, and negotiate changes before you commit.',
       },
       {
-        q: 'How long does a civil case take in Cyprus?',
-        a: 'Timeframes vary widely with the type of case and the court’s schedule. I will give you an honest estimate at the start and keep you updated as it progresses.',
+        q: 'What can I do about a disciplinary decision?',
+        a: 'Many sporting bodies have internal appeal and arbitration procedures with strict deadlines. I can advise on the grounds and represent you through the process.',
       },
       {
-        q: 'What should I do if I receive a court claim?',
-        a: 'Contact a lawyer straight away — there are strict deadlines for responding, and missing them can lead to a judgment against you.',
+        q: 'Do you advise both athletes and clubs?',
+        a: 'Yes — on either side, provided there is no conflict of interest in the specific matter.',
       },
     ],
-    ctaTitle: 'Facing a dispute? Let’s talk.',
-    ctaText: 'Court deadlines can be short — the sooner we speak, the more options you have.',
-    metaTitle: 'Litigation & Dispute Resolution — Polykarpou Law',
+    ctaTitle: 'Discuss your sports matter',
+    ctaText: 'The first 30-minute consultation is free and confidential.',
+    metaTitle: 'Sports Law — Polykarpou Law',
     metaDescription:
-      'Firm, well-prepared representation before the Cyprus courts — and, where it serves you better, a negotiated settlement that avoids a long trial.',
+      'Legal support for athletes, clubs, agents and sports bodies in Cyprus — from playing and sponsorship contracts to disciplinary and regulatory disputes.',
   },
-  criminal: {
-    title: 'Criminal Defense',
-    homeBlurb: 'From investigation and arrest through trial and appeal.',
+  'banking-finance': {
+    title: 'Banking & Finance',
+    homeBlurb: 'Lending, security, regulation and financial agreements.',
     intro:
-      'Calm, discreet and determined defence at every stage — from the first police questioning through trial and appeal.',
-    overviewTitle: 'Your rights protected from the very first moment.',
+      'Clear legal support for banking, lending and financial transactions in Cyprus — from loan and security documents to regulatory compliance.',
+    overviewTitle: 'Financing that is properly documented and secure.',
     overviewParas: [
-      'Being questioned, arrested or charged is stressful. What you say and do in the first hours can shape the whole case, so it is important to have a lawyer beside you early.',
-      'I explain your rights, attend police interviews, challenge remand applications and build a careful defence based on the evidence. Everything you tell me stays strictly confidential. [Adjust to your own experience.]',
+      'Whether you are borrowing, lending or structuring a financial transaction, the terms of the facility and the security behind it decide how protected you are if things go wrong.',
+      'I advise borrowers, lenders and businesses on loan agreements, security, refinancing and regulatory questions — explained in plain language, with documents that match the deal in front of you. [Adjust to your own experience and typical clients.]',
     ],
     servicesTitle: 'How I can help',
     services: [
       {
-        name: 'Police questioning',
-        desc: 'Attending interviews and advising you on your rights before you speak.',
+        name: 'Loan & facility agreements',
+        desc: 'Drafting and reviewing credit facilities, term loans and overdrafts.',
       },
       {
-        name: 'Arrest & remand hearings',
-        desc: 'Challenging detention and applying for release on conditions.',
+        name: 'Security & collateral',
+        desc: 'Mortgages, pledges, guarantees and assignments to secure lending.',
       },
       {
-        name: 'Defence at trial',
-        desc: 'Preparing and presenting your defence before the criminal courts.',
+        name: 'Refinancing & restructuring',
+        desc: 'Renegotiating existing debt and restructuring facilities.',
       },
       {
-        name: 'Appeals',
-        desc: 'Appealing convictions and sentences where there are grounds.',
+        name: 'Loan recovery & enforcement',
+        desc: 'Enforcing security and recovering amounts owed to lenders.',
       },
       {
-        name: 'Financial & white-collar offences',
-        desc: 'Fraud, money-laundering and other economic allegations.',
+        name: 'Banking regulation',
+        desc: 'Licensing and compliance for banks, EMIs and payment institutions.',
       },
       {
-        name: 'Traffic & driving offences',
-        desc: 'Representation for serious road-traffic charges.',
+        name: 'Financial services agreements',
+        desc: 'Account, custody, factoring and intermediary agreements.',
       },
       {
-        name: 'Victims of crime',
-        desc: 'Supporting victims through the complaint and court process.',
+        name: 'AML & compliance',
+        desc: 'Anti-money-laundering procedures, policies and due diligence.',
       },
       {
-        name: 'Extradition & European Arrest Warrants',
-        desc: 'Advice and representation in cross-border criminal matters.',
+        name: 'Debt & facility disputes',
+        desc: 'Disputes between borrowers, guarantors and financial institutions.',
       },
     ],
     approachTitle: 'Why clients work with me',
     why: [
       {
         num: '01',
-        title: 'Available when it matters',
-        desc: 'Urgent matters such as arrests can be handled outside office hours.',
+        title: 'Direct access',
+        desc: 'You speak with me personally from the first call to the final result.',
       },
       {
         num: '02',
-        title: 'Strict confidentiality',
-        desc: 'Everything you share is protected by professional secrecy.',
+        title: 'Clear fees',
+        desc: 'Fixed or hourly fees agreed in writing before any work begins.',
       },
       {
         num: '03',
         title: 'Three languages',
-        desc: 'Advice in English, Greek or Russian, so nothing is lost in translation.',
+        desc: 'Advice and documents in English, Greek or Russian.',
       },
     ],
     faqTitle: 'Common questions',
     faqs: [
       {
-        q: 'Do I have to answer police questions without a lawyer?',
-        a: 'You have the right to consult a lawyer. It is usually wise to speak with one before giving a statement.',
+        q: 'Can you review a loan agreement before I sign?',
+        a: 'Yes. I can review the facility and security documents, explain the risks and the key obligations, and suggest changes before you commit.',
       },
       {
-        q: 'What happens at a remand hearing?',
-        a: 'The court decides whether you can be held in custody while the investigation continues. A lawyer can challenge the request and argue for your release.',
+        q: 'What security can a lender take over a Cyprus asset?',
+        a: 'Common forms include mortgages over property, pledges over shares and bank accounts, and personal or corporate guarantees. I can advise which fits your transaction.',
       },
       {
-        q: 'Can you help a foreign national arrested in Cyprus?',
-        a: 'Yes. I can advise in English, Greek or Russian and coordinate with family or consular contacts where needed.',
+        q: 'Do you advise both borrowers and lenders?',
+        a: 'Yes — on either side of a transaction, provided there is no conflict of interest in the specific matter.',
       },
     ],
-    ctaTitle: 'Need a defence lawyer now?',
-    ctaText: 'Call directly for urgent matters. Your conversation is confidential.',
-    metaTitle: 'Criminal Defense — Polykarpou Law',
+    ctaTitle: 'Discuss your financing matter',
+    ctaText: 'The first 30-minute consultation is free and confidential.',
+    metaTitle: 'Banking & Finance — Polykarpou Law',
     metaDescription:
-      'Calm, discreet and determined defence at every stage — from the first police questioning through trial and appeal.',
+      'Clear legal support for banking, lending and financial transactions in Cyprus — from loan and security documents to regulatory compliance.',
   },
   'real-estate': {
     title: 'Real Estate & Construction',
@@ -757,6 +762,90 @@ export const PRACTICE_AREAS_EN: PracticeAreaContentMap = {
     metaTitle: 'Immigration & Residency — Polykarpou Law',
     metaDescription:
       'Moving to Cyprus to live, work or invest — clear guidance on permits, applications and every step of the process.',
+  },
+  'private-client': {
+    title: 'Private Client',
+    homeBlurb: 'Wealth, succession, trusts and tax planning for individuals.',
+    intro:
+      'Discreet, personal advice for individuals and families in Cyprus and abroad — from wills and succession to trusts, tax and relocation.',
+    overviewTitle: 'Your wealth and your family, carefully planned.',
+    overviewParas: [
+      'Looking after personal and family wealth means thinking ahead — about succession, tax and the structures that protect what you have built, at home and across borders.',
+      'I advise individuals, families and private banks on wills, estates, trusts, tax planning and relocation to Cyprus, coordinating the legal, personal and cross-border sides of each matter. [Adjust to your own experience and typical clients.]',
+    ],
+    servicesTitle: 'How I can help',
+    services: [
+      {
+        name: 'International tax planning',
+        desc: 'Cross-border tax structuring and compliance for private clients.',
+      },
+      {
+        name: 'Succession planning',
+        desc: 'Passing wealth and assets to the next generation efficiently.',
+      },
+      {
+        name: 'Estate planning',
+        desc: 'Structuring personal and financial affairs around your long-term goals.',
+      },
+      {
+        name: 'Wills & probate',
+        desc: 'Drafting wills and administering estates through probate.',
+      },
+      {
+        name: 'Trusts',
+        desc: 'Setting up and managing trusts for asset protection and distribution.',
+      },
+      {
+        name: 'Property & conveyancing',
+        desc: 'Buying, selling and transferring personal real estate holdings.',
+      },
+      {
+        name: 'Residency & relocation',
+        desc: 'Residence, relocation and immigration support for private clients.',
+      },
+      {
+        name: 'Family arrangements',
+        desc: 'Marriage, civil partnership, divorce and related personal matters.',
+      },
+    ],
+    approachTitle: 'Why clients work with me',
+    why: [
+      {
+        num: '01',
+        title: 'Discreet & personal',
+        desc: 'Your affairs handled with complete confidentiality and care.',
+      },
+      {
+        num: '02',
+        title: 'Clear fees',
+        desc: 'Fixed or hourly fees agreed in writing before any work begins.',
+      },
+      {
+        num: '03',
+        title: 'Three languages',
+        desc: 'Advice and documents in English, Greek or Russian.',
+      },
+    ],
+    faqTitle: 'Common questions',
+    faqs: [
+      {
+        q: 'Do I need a Cyprus will if I own property here?',
+        a: 'A Cyprus will can make administering local assets much simpler. I can advise how it should work alongside any will you hold abroad.',
+      },
+      {
+        q: 'What is a trust used for?',
+        a: 'Trusts are used to protect assets, plan succession and manage wealth for family members. I can explain whether one fits your situation.',
+      },
+      {
+        q: 'Can you help me relocate to Cyprus?',
+        a: 'Yes. I coordinate the residency, tax and estate-planning sides of a move so they work together.',
+      },
+    ],
+    ctaTitle: 'Plan for your family’s future',
+    ctaText: 'The first 30-minute consultation is free and confidential.',
+    metaTitle: 'Private Client — Polykarpou Law',
+    metaDescription:
+      'Discreet, personal advice for individuals and families in Cyprus and abroad — from wills and succession to trusts, tax and relocation.',
   },
 };
 

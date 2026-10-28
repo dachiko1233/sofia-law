@@ -46,12 +46,12 @@ export default function HomePage() {
               decoding="async"
               className="aspect-[4/5] w-full rounded-[4px] bg-placeholder object-cover"
             />
-            <div className="flex flex-col gap-0.5">
+            <div className="flex flex-col items-center gap-0.5 text-center">
               <span className="text-[18px] font-semibold">{t('about.name')}</span>
               <span className="text-[15px] text-muted">{t('about.role')}</span>
             </div>
           </div>
-          <div className="flex max-w-[700px] flex-col gap-[22px]">
+          <div className="mx-auto flex max-w-[700px] flex-col items-center gap-[22px] text-center">
             <SectionLabel className="leading-none text-accent">{t('about.label')}</SectionLabel>
             <FitText as="h2" reference={enT('about.title')} className={H2}>
               {t('about.title')}
@@ -59,14 +59,14 @@ export default function HomePage() {
             {(['p1', 'p2', 'p3', 'p4'] as const).map((p) => (
               <p
                 key={p}
-                className="m-0 text-[18px] leading-[1.75] text-ink-soft [hyphens:auto] [text-align:justify]"
+                className="m-0 w-full text-[18px] leading-[1.75] text-ink-soft [hyphens:auto] [text-align:left]"
               >
                 {t(`about.${p}`)}
               </p>
             ))}
             <AnchorLink
               to="/#contact"
-              className="inline-flex min-h-[44px] items-center gap-2.5 self-start border-b-[1.5px] border-ink pb-1 font-semibold no-underline"
+              className="inline-flex min-h-[44px] items-center gap-2.5 self-center border-b-[1.5px] border-ink pb-1 font-semibold no-underline"
             >
               {t('buttons.arrangeConsultation')}
               <ArrowRight size={16} />

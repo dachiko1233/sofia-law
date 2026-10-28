@@ -41,7 +41,7 @@ export default function ExpertisePage() {
       />
 
       {/* HEADER BAND */}
-      <div className="pa-head text-slate-doc">
+      <div className={`pa-head pa-head--${area.slug} text-slate-doc`}>
         <Header variant="inner" />
         <section className="wrap flex min-h-[520px] flex-col justify-center gap-7 pb-32 pt-24 min-[960px]:min-h-[720px]">
           <nav

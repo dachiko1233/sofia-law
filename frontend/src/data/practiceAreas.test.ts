@@ -9,18 +9,19 @@ import { PRACTICE_AREAS_GR } from './practiceAreas.gr';
 import { PRACTICE_AREAS_RU } from './practiceAreas.ru';
 
 const EXPECTED_SLUGS = [
+  'banking-finance',
   'corporate',
-  'litigation',
-  'criminal',
-  'real-estate',
-  'family',
   'employment',
-  'tech-ip',
+  'family',
   'immigration',
+  'private-client',
+  'real-estate',
+  'sports-law',
+  'tech-ip',
 ];
 
 describe('practice areas data', () => {
-  it('contains all 8 expected areas in order', () => {
+  it('contains all 9 expected areas in order', () => {
     expect(PRACTICE_AREA_SLUGS).toEqual(EXPECTED_SLUGS);
   });
 
@@ -45,13 +46,13 @@ describe('practice areas data', () => {
   });
 
   it('looks areas up by slug and language', () => {
-    expect(getPracticeArea('corporate')?.num).toBe('01');
+    expect(getPracticeArea('corporate')?.num).toBe('02');
     expect(getPracticeArea('nope')).toBeUndefined();
     // Greek/Russian return translated titles while keeping slug + num.
     expect(getPracticeArea('corporate', 'gr')?.title).not.toBe(
       getPracticeArea('corporate', 'en')?.title
     );
-    expect(getPracticeArea('corporate', 'ru')?.num).toBe('01');
+    expect(getPracticeArea('corporate', 'ru')?.num).toBe('02');
   });
 
   it('GR and RU cover every slug with the same shape as EN', () => {
