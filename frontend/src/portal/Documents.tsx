@@ -17,6 +17,9 @@ import {
   ChatIcon,
 } from './icons';
 
+/** Per-file upload limit, kept in sync with the backend's MaxUploadBytes. */
+const MAX_UPLOAD_BYTES = 10 * 1024 * 1024;
+
 /** Drag-and-drop (or click) upload target wired to the real backend. */
 export function UploadDropzone({ onUploaded }: { onUploaded: () => Promise<void> }) {
   const { t } = useTranslation();
@@ -28,6 +31,12 @@ export function UploadDropzone({ onUploaded }: { onUploaded: () => Promise<void>
 
   async function send(file: File) {
     setError(null);
+    // Mirror the backend's 10 MB cap so oversized files fail instantly with a
+    // clear message instead of a slow round-trip.
+    if (file.size > MAX_UPLOAD_BYTES) {
+      setError(errorText('file_too_large'));
+      return;
+    }
     setBusy(true);
     try {
       await uploadDocument(file);
@@ -77,6 +86,7 @@ export function UploadDropzone({ onUploaded }: { onUploaded: () => Promise<void>
       <input
         ref={inputRef}
         type="file"
+        accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
         className="hidden"
         onChange={(e) => {
           const file = e.currentTarget.files?.[0];

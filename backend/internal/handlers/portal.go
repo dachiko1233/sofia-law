@@ -174,9 +174,19 @@ func (h *PortalHandler) Me(c *gin.Context) {
 func (h *PortalHandler) Upload(c *gin.Context) {
 	uid := uidFrom(c)
 
-	c.Request.Body = http.MaxBytesReader(c.Writer, c.Request.Body, MaxUploadBytes+1024)
+	// Allow headroom above the file limit for the multipart envelope (boundary,
+	// field headers) so a legitimate near-limit file isn't rejected by the body
+	// reader. The real per-file cap is enforced by the fileHeader.Size check
+	// below. Anything past this hard ceiling trips MaxBytesReader inside
+	// FormFile; we detect that and report "too large" rather than "no file".
+	c.Request.Body = http.MaxBytesReader(c.Writer, c.Request.Body, MaxUploadBytes+1<<20)
 	fileHeader, err := c.FormFile("file")
 	if err != nil {
+		var maxErr *http.MaxBytesError
+		if errors.As(err, &maxErr) {
+			c.JSON(http.StatusRequestEntityTooLarge, gin.H{"error": "file_too_large"})
+			return
+		}
 		c.JSON(http.StatusBadRequest, gin.H{"error": "no_file"})
 		return
 	}
