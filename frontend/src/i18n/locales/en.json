@@ -193,6 +193,8 @@
     "loading": "Loading…",
     "empty": "You haven’t uploaded any documents yet.",
     "download": "Download",
+    "preview": "Preview",
+    "close": "Close",
     "metaTitle": "Client Portal — Polykarpou & Co. LLC",
     "metaDescription": "Secure client portal — sign in to share documents with Polykarpou & Co. LLC and view your uploads.",
     "errors": {

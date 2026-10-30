@@ -1,9 +1,11 @@
-import { useRef, useState, type DragEvent } from 'react';
+import { useEffect, useRef, useState, type DragEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   uploadDocument,
   downloadDocument,
   deleteDocument,
+  fetchDocumentBlobUrl,
+  isPreviewable,
   PortalError,
   type PortalDocument,
 } from '../lib/portal';
@@ -15,6 +17,8 @@ import {
   CheckCircleIcon,
   ClockIcon,
   ChatIcon,
+  EyeIcon,
+  XIcon,
 } from './icons';
 
 /** Per-file upload limit, kept in sync with the backend's MaxUploadBytes. */
@@ -115,6 +119,7 @@ export function DocumentList({
   const errorText = useErrorText();
   const [error, setError] = useState<string | null>(null);
   const [busyId, setBusyId] = useState<number | null>(null);
+  const [preview, setPreview] = useState<PortalDocument | null>(null);
 
   async function remove(doc: PortalDocument) {
     if (!window.confirm(t('portal.confirmDelete', { name: doc.name }))) return;
@@ -145,9 +150,21 @@ export function DocumentList({
           >
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="flex min-w-0 items-center gap-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[9px] bg-gold-wash text-gold">
-                  <FileGlyph name={d.name} />
-                </span>
+                {isPreviewable(d) ? (
+                  <button
+                    type="button"
+                    onClick={() => setPreview(d)}
+                    aria-label={t('portal.preview')}
+                    title={t('portal.preview')}
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[9px] bg-gold-wash text-gold transition-colors hover:bg-gold hover:text-white"
+                  >
+                    <FileGlyph name={d.name} />
+                  </button>
+                ) : (
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[9px] bg-gold-wash text-gold">
+                    <FileGlyph name={d.name} />
+                  </span>
+                )}
                 <div className="flex min-w-0 flex-col">
                   <span className="truncate text-[15px] font-semibold text-portal-ink">
                     {d.name}
@@ -166,6 +183,11 @@ export function DocumentList({
                   {d.seenAt ? <CheckCircleIcon size={15} /> : <ClockIcon size={15} />}
                   {d.seenAt ? t('portal.statusSeen') : t('portal.statusPending')}
                 </span>
+                {isPreviewable(d) && (
+                  <IconButton label={t('portal.preview')} onClick={() => setPreview(d)}>
+                    <EyeIcon size={18} />
+                  </IconButton>
+                )}
                 <IconButton label={t('portal.download')} onClick={() => downloadDocument(d)}>
                   <DownloadIcon size={18} />
                 </IconButton>
@@ -201,6 +223,91 @@ export function DocumentList({
           </li>
         ))}
       </ul>
+      {preview && <DocumentPreview doc={preview} onClose={() => setPreview(null)} />}
+    </div>
+  );
+}
+
+/** Full-screen lightbox that renders an image or PDF inline (fetched with auth). */
+function DocumentPreview({ doc, onClose }: { doc: PortalDocument; onClose: () => void }) {
+  const { t } = useTranslation();
+  const errorText = useErrorText();
+  const [url, setUrl] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const isImage = doc.mime.startsWith('image/');
+
+  useEffect(() => {
+    let active = true;
+    let objectUrl: string | null = null;
+    fetchDocumentBlobUrl(doc)
+      .then((u) => {
+        if (active) {
+          objectUrl = u;
+          setUrl(u);
+        } else {
+          URL.revokeObjectURL(u);
+        }
+      })
+      .catch((err) => {
+        if (active) setError(errorText(err instanceof PortalError ? err.code : 'generic'));
+      });
+    return () => {
+      active = false;
+      if (objectUrl) URL.revokeObjectURL(objectUrl);
+    };
+  }, [doc, errorText]);
+
+  // Close on Escape for keyboard users.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [onClose]);
+
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={doc.name}
+      onClick={onClose}
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-black/70 p-4 sm:p-8"
+    >
+      <div className="flex w-full max-w-5xl items-center justify-between gap-3 text-white">
+        <span className="truncate text-[15px] font-semibold">{doc.name}</span>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label={t('portal.close')}
+          title={t('portal.close')}
+          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+        >
+          <XIcon size={20} />
+        </button>
+      </div>
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="flex min-h-0 w-full max-w-5xl flex-1 items-center justify-center overflow-hidden rounded-[12px] bg-white"
+      >
+        {error ? (
+          <p role="alert" className="m-0 px-6 py-12 text-center text-[15px] font-medium text-bad">
+            {error}
+          </p>
+        ) : !url ? (
+          <p className="m-0 px-6 py-12 text-center text-[15px] text-portal-muted">
+            {t('portal.loading')}
+          </p>
+        ) : isImage ? (
+          <img
+            src={url}
+            alt={doc.name}
+            className="max-h-full max-w-full object-contain"
+          />
+        ) : (
+          <iframe src={url} title={doc.name} className="h-full w-full border-0" />
+        )}
+      </div>
     </div>
   );
 }

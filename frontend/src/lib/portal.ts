@@ -159,14 +159,21 @@ export async function deleteDocument(id: number): Promise<void> {
   if (!res.ok) await parseError(res);
 }
 
-// downloadDocument fetches the file (with auth) and saves it via a temporary link.
-export async function downloadDocument(doc: PortalDocument): Promise<void> {
+// fetchDocumentBlobUrl fetches the file (with auth) and returns an object URL
+// for it. Callers own the returned URL and must URL.revokeObjectURL it when
+// done so the blob can be garbage-collected (important for in-browser preview).
+export async function fetchDocumentBlobUrl(doc: PortalDocument): Promise<string> {
   const res = await fetch(`${API_BASE}/api/portal/documents/${doc.id}`, {
     headers: authHeaders(),
   });
   if (!res.ok) await parseError(res);
   const blob = await res.blob();
-  const url = URL.createObjectURL(blob);
+  return URL.createObjectURL(blob);
+}
+
+// downloadDocument fetches the file (with auth) and saves it via a temporary link.
+export async function downloadDocument(doc: PortalDocument): Promise<void> {
+  const url = await fetchDocumentBlobUrl(doc);
   const a = document.createElement('a');
   a.href = url;
   a.download = doc.name;
@@ -174,4 +181,9 @@ export async function downloadDocument(doc: PortalDocument): Promise<void> {
   a.click();
   a.remove();
   URL.revokeObjectURL(url);
+}
+
+/** Whether a document can be shown inline in the browser preview. */
+export function isPreviewable(doc: PortalDocument): boolean {
+  return doc.mime === 'application/pdf' || doc.mime.startsWith('image/');
 }
